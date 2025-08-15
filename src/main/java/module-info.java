@@ -1,4 +1,5 @@
 module dev.jolvera.finjav {
+    requires java.compiler;
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.web;
@@ -14,6 +15,7 @@ module dev.jolvera.finjav {
     requires org.jdbi.v3.sqlobject;
     requires jakarta.inject;
     requires static lombok;
+    requires org.xerial.sqlitejdbc;
 
     opens dev.jolvera.finjav to javafx.fxml;
     exports dev.jolvera.finjav;
