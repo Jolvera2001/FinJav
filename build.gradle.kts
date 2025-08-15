@@ -4,6 +4,7 @@ plugins {
     id("org.javamodularity.moduleplugin") version "1.8.15"
     id("org.openjfx.javafxplugin") version "0.0.13"
     id("org.beryx.jlink") version "2.25.0"
+    id("io.freefair.lombok") version "8.14"
 }
 
 group = "dev.jolvera"
@@ -36,6 +37,7 @@ javafx {
 }
 
 dependencies {
+    // javafx related
     implementation("org.controlsfx:controlsfx:11.2.1")
     implementation("net.synedra:validatorfx:0.6.1") {
         exclude(group = "org.openjfx")
@@ -44,6 +46,19 @@ dependencies {
     implementation("eu.hansolo:tilesfx:21.0.9") {
         exclude(group = "org.openjfx")
     }
+    // DB
+    implementation(platform("org.jdbi:jdbi3-bom:3.49.5"))
+    implementation("org.jdbi:jdbi3-core")
+    implementation("org.jdbi:jdbi3-sqlobject")
+    implementation("org.jdbi:jdbi3-sqlite")
+    implementation("org.xerial:sqlite-jdbc:3.47.1.0")
+
+    // DI
+    implementation("com.google.dagger:dagger:2.57")
+    annotationProcessor("com.google.dagger:dagger-compiler:2.57")
+
+    // testing
+    testImplementation("org.jdbi:jdbi3-testing:3.49.5")
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
 }
