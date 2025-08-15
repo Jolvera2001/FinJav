@@ -16,6 +16,7 @@ module dev.jolvera.finjav {
     requires jakarta.inject;
     requires static lombok;
     requires org.xerial.sqlitejdbc;
+    requires jakarta.validation;
 
     opens dev.jolvera.finjav to javafx.fxml;
     exports dev.jolvera.finjav;

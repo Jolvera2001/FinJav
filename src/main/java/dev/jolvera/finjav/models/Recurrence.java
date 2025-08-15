@@ -10,11 +10,12 @@ import java.util.UUID;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class Recurrence {
     private UUID id;
     private LocalDate dateCreated;
     private LocalDate dateModified;
     private String name;
-    private String email;
-    private String password;
+    private Boolean isIncome;
+    private LocalDate recurringDate;
 }
+

@@ -46,6 +46,10 @@ dependencies {
     implementation("eu.hansolo:tilesfx:21.0.9") {
         exclude(group = "org.openjfx")
     }
+    // validation
+    implementation("jakarta.validation:jakarta.validation-api:3.1.1")
+    implementation("org.hibernate.validator:hibernate-validator:9.0.1.Final")
+
     // DB
     implementation(platform("org.jdbi:jdbi3-bom:3.49.5"))
     implementation("org.jdbi:jdbi3-core")
