@@ -19,15 +19,15 @@ public interface UserDao {
 
     @SqlQuery("SELECT * FROM users")
     @RegisterBeanMapper(User.class)
-    List<User> findAll();
+    List<User> FindAll();
 
     @SqlUpdate("INSERT INTO users (id, name, email, password) VALUES (:name, :email, :password)")
     @GetGeneratedKeys("id")
     UUID CreateUser(@BindBean UserDto userDto);
 
     @SqlUpdate("UPDATE users SET name = :name, email = :email, password = :password WHERE id = :id")
-    int UpdateUser(@BindBean User update);
+    int UpdateUser(@BindBean UserDto update);
 
     @SqlUpdate("DELETE FROM users WHERE id = :id")
-    int deleteById(@Bind("id") UUID id);
+    int DeleteById(@Bind("id") UUID id);
 }
