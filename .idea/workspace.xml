@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ee34415-2bf3-4076-9fdc-abea22d4f830" name="Changes" comment="learning more about CompletableFutures">
+    <list default="true" id="3ee34415-2bf3-4076-9fdc-abea22d4f830" name="Changes" comment="implemented viewmodel for dialog I think">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/controllers/AccountDialogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/controllers/AccountDialogController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/viewModels/AccountDialogViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/viewModels/AccountDialogViewModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -94,7 +95,7 @@
     "project.structure.last.edited": "Global Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.29655173",
-    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors",
+    "settings.editor.selected.configurable": "editor.preferences.tabs",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -120,7 +121,7 @@
       <updated>1755268977676</updated>
       <workItem from="1755268979397" duration="120000" />
       <workItem from="1755269298618" duration="6896000" />
-      <workItem from="1755301071895" duration="16618000" />
+      <workItem from="1755301071895" duration="17282000" />
     </task>
     <task id="LOCAL-00001" summary="I'm so tired">
       <option name="closed" value="true" />
@@ -178,7 +179,15 @@
       <option name="project" value="LOCAL" />
       <updated>1755368161143</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="implemented viewmodel for dialog I think">
+      <option name="closed" value="true" />
+      <created>1755368894019</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1755368894019</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -192,7 +201,8 @@
     <MESSAGE value="making dialog stuff idk" />
     <MESSAGE value="lombok is weird" />
     <MESSAGE value="learning more about CompletableFutures" />
-    <option name="LAST_COMMIT_MESSAGE" value="learning more about CompletableFutures" />
+    <MESSAGE value="implemented viewmodel for dialog I think" />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented viewmodel for dialog I think" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

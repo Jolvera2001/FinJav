@@ -1,6 +1,7 @@
 package dev.jolvera.finjav.controllers;
 
 import dev.jolvera.finjav.viewModels.AccountDialogViewModel;
+import jakarta.inject.Inject;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -25,9 +26,42 @@ public class AccountDialogController {
 
 
     @FXML
-    private void Initialize() {
-
+    @Inject
+    private void Initialize(AccountDialogViewModel viewModel) {
+        this.viewModel = viewModel;
+        setupBindings();
         setupHandlers();
+    }
+
+    private void setupBindings() {
+        LoginUsernameInput.textProperty().bindBidirectional(viewModel.loginUsernameProperty());
+        LoginPasswordInput.textProperty().bindBidirectional(viewModel.loginPasswordProperty());
+
+        RegisterUsernameInput.textProperty().bindBidirectional(viewModel.registerUsernameProperty());
+        RegisterEmailInput.textProperty().bindBidirectional(viewModel.registerEmailProperty());
+        RegisterPasswordInput.textProperty().bindBidirectional(viewModel.registerPasswordProperty());
+
+        errorLabel.textProperty().bindBidirectional(viewModel.errorMessageProperty());
+        errorLabel.visibleProperty().bindBidirectional(viewModel.hasErrorProperty());
+
+        // Bind button states
+        LoginConfirmButton.disableProperty().bind(
+                viewModel.isLoadingProperty().or(
+                        LoginUsernameInput.textProperty().isEmpty().or(
+                                LoginPasswordInput.textProperty().isEmpty()
+                        )
+                )
+        );
+
+        RegisterConfirmButton.disableProperty().bind(
+                viewModel.isLoadingProperty().or(
+                        RegisterUsernameInput.textProperty().isEmpty().or(
+                                RegisterEmailInput.textProperty().isEmpty().or(
+                                        RegisterPasswordInput.textProperty().isEmpty()
+                                )
+                        )
+                )
+        );
     }
 
     private void setupHandlers() {
@@ -36,7 +70,9 @@ public class AccountDialogController {
     }
 
     private void handleLogin() {
-
+        viewModel.attemptLogin();
     }
-    private void handleRegister() {}
+    private void handleRegister() {
+        viewModel.attemptRegister();
+    }
 }

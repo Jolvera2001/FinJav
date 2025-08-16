@@ -6,6 +6,8 @@ import dev.jolvera.finjav.services.interfaces.UserService;
 import dev.jolvera.finjav.utils.PasswordUtils;
 import jakarta.inject.Inject;
 import javafx.beans.InvalidationListener;
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
@@ -24,12 +26,16 @@ public class AccountDialogViewModel extends BaseViewModel {
     private final StringProperty registerEmail = new SimpleStringProperty("");
     private final StringProperty registerPassword = new SimpleStringProperty("");
 
+    private final BooleanProperty hasError =  new SimpleBooleanProperty(false);
+
     public StringProperty loginUsernameProperty() { return loginUsername; }
     public StringProperty loginPasswordProperty() { return loginPassword; }
 
     public StringProperty registerUsernameProperty() { return registerUsername; }
     public StringProperty registerEmailProperty() { return registerEmail; }
     public StringProperty registerPasswordProperty() { return registerPassword; }
+
+    public BooleanProperty hasErrorProperty() { return hasError; }
 
     @Inject
     public AccountDialogViewModel(UserService userService) {
@@ -48,10 +54,12 @@ public class AccountDialogViewModel extends BaseViewModel {
 
     private void clearError() {
         errorMessage.set("");
+        hasError.set(false);
     }
 
     private void showError(String message) {
         errorMessage.set(message);
+        hasError.set(true);
     }
 
     public void attemptLogin() {
@@ -61,9 +69,7 @@ public class AccountDialogViewModel extends BaseViewModel {
         }
 
         executeAsync(
-                () -> {
-                    return userService.Login(loginUsername.get(), loginPassword.get());
-                },
+                () -> userService.Login(loginUsername.get(), loginPassword.get()),
                 user -> {
                     if (user == null) {
                         showError("Login failed");
