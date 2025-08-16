@@ -32,12 +32,23 @@ public class DbContext {
         this.jdbi.withHandle(handle -> {
            handle.execute("""
             CREATE TABLE IF NOT EXISTS users (
+                id TEXT NOT NULL PRIMARY KEY,
+                date_created DATETIME NOT NULL,
+                date_Modified DATETIME NOT NULL,
+                name TEXT NOT NULL,
+                email TEXT NOT NULL,
+                password TEXT NOT NULL,
                 )
             """);
 
            handle.execute("""
             CREATE TABLE IF NOT EXISTS recurrences (
-                
+                id TEXT NOT NULL PRIMARY KEY,
+                date_created DATETIME NOT NULL,
+                date_Modified DATETIME NOT NULL,
+                name TEXT NOT NULL,
+                is_income BOOLEAN NOT NULL,
+                recurring_date DATETIME NOT NULL,
                 )
             """);
 
