@@ -1,12 +1,11 @@
-package dev.jolvera.finjav;
+package dev.jolvera.finjav.controllers;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TextField;
 
-public class HelloController {
+public class MainPageController {
     @FXML
     private TextField searchField;
 

@@ -12,7 +12,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TabPane?>
 <BorderPane xmlns:fx="http://javafx.com/fxml"
-            fx:controller="dev.jolvera.finjav.HelloController">
+            fx:controller="dev.jolvera.finjav.controllers.MainPageController">
     <!-- topbar -->
     <top>
         <VBox>

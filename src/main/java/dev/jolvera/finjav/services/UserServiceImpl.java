@@ -11,11 +11,11 @@ import java.util.Optional;
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 
-public class UserServiceImp implements UserService {
+public class UserServiceImpl implements UserService {
     private final DbContext dbContext;
 
     @Inject
-    public UserServiceImp(DbContext dbContext) {
+    public UserServiceImpl(DbContext dbContext) {
         this.dbContext = dbContext;
     }
 

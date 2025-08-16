@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<DialogPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="dev.jolvera.finjav.controllers.AccountDialogController"
+            prefHeight="400.0" prefWidth="600.0">
+    <content>
+        <VBox>
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+            <Label text="Please sign in or create an account" style="-fx-font-size: 14px; -fx-font-weight: bold;" />
+
+            <GridPane hgap="15.0" vgap="20.0">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="NEVER" minWidth="80.0" prefWidth="80.0" />
+                    <ColumnConstraints hgrow="NEVER" minWidth="200.0" />
+                    <ColumnConstraints hgrow="NEVER" minWidth="20.0" />
+                    <ColumnConstraints hgrow="NEVER" minWidth="80.0" prefWidth="80.0" />
+                    <ColumnConstraints hgrow="NEVER" minWidth="200.0" />
+                </columnConstraints>
+
+                <!-- Login -->
+                <Label text="Login"
+                       GridPane.columnSpan="2"
+                       GridPane.rowIndex="1"
+                       GridPane.columnIndex="0"
+                       style="-fx-font-size: 15px" />
+
+                <Label text="Username:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <TextField fx:id="LoginUsernameInput"
+                           GridPane.columnIndex="1"
+                           GridPane.rowIndex="2" />
+
+                <Label text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                <PasswordField fx:id="LoginPasswordInput"
+                               GridPane.columnIndex="1"
+                               GridPane.rowIndex="3" />
+
+                <HBox GridPane.rowIndex="4" GridPane.columnIndex="1" spacing="10.0">
+                    <Button fx:id="LoginConfirmButton" text="Login" prefWidth="95.0" />
+                    <Button fx:id="LoginClearFieldsButton" text="Clear" prefWidth="95.0" />
+                </HBox>
+
+                <Separator orientation="VERTICAL" GridPane.columnIndex="2" GridPane.rowSpan="8" />
+
+                <!-- Register -->
+                <Label text="Register"
+                       GridPane.columnSpan="2"
+                       GridPane.rowIndex="1"
+                       GridPane.columnIndex="3"
+                       style="-fx-font-size: 15px" />
+
+                <Label text="Username:" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                <TextField fx:id="RegisterUsernameInput"
+                           GridPane.columnIndex="4"
+                           GridPane.rowIndex="2" />
+
+                <Label text="Email:" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                <TextField fx:id="RegisterEmailInput"
+                               GridPane.columnIndex="4"
+                               GridPane.rowIndex="3" />
+
+                <Label text="Password:" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                <PasswordField fx:id="RegisterPasswordInput"
+                               GridPane.columnIndex="4"
+                               GridPane.rowIndex="4" />
+
+                <HBox GridPane.rowIndex="5" GridPane.columnIndex="4" spacing="10.0">
+                    <Button fx:id="RegisterConfirmButton" text="Register" prefWidth="95.0" />
+                    <Button fx:id="RegisterClearFieldsButton" text="Clear" prefWidth="95.0" />
+                </HBox>
+            </GridPane>
+
+            <Label fx:id="errorLabel" textFill="red" visible="false" />
+        </VBox>
+    </content>
+</DialogPane>
