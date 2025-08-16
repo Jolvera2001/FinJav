@@ -1,12 +1,15 @@
 package dev.jolvera.finjav.viewModels;
 
 import dev.jolvera.finjav.models.User;
+import dev.jolvera.finjav.models.dtos.UserDto;
 import dev.jolvera.finjav.services.interfaces.UserService;
+import dev.jolvera.finjav.utils.PasswordUtils;
 import jakarta.inject.Inject;
 import javafx.beans.InvalidationListener;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
+import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 
 public class AccountDialogViewModel extends BaseViewModel {
@@ -51,21 +54,44 @@ public class AccountDialogViewModel extends BaseViewModel {
         errorMessage.set(message);
     }
 
-//    public CompletableFuture<User> attemptLogin() {
-//        clearError();
-//        isLoading.set(true);
-//
-//        return CompletableFuture.supplyAsync(() -> {
-//
-//        });
-//    }
-//
-//    public CompletableFuture<User> attemptRegister() {
-//        clearError();
-//        isLoading.set(true);
-//
-//        return CompletableFuture.supplyAsync(() -> {
-//
-//        });
-//    }
+    public void attemptLogin() {
+        if (loginUsername.get() == null || loginPassword.get() == null) {
+            showError("One or more login fields are empty");
+            return;
+        }
+
+        executeAsync(
+                () -> {
+                    return userService.Login(loginUsername.get(), loginPassword.get());
+                },
+                user -> {
+                    if (user == null) {
+                        showError("Login failed");
+                    }
+                }
+        );
+    }
+
+    public void attemptRegister() {
+        if (registerUsername.get() == null || registerEmail.get() == null || registerPassword.get() == null) {
+            showError("One or more register fields are empty");
+        }
+
+        executeAsync(
+                () -> {
+                    var dto = new UserDto(
+                            UUID.randomUUID(),
+                            registerUsername.get(),
+                            registerEmail.get(),
+                            PasswordUtils.HashPassword(registerPassword.get())
+                    );
+                    return userService.Register(dto);
+                },
+                user -> {
+                    if (user == null) {
+                        showError("Register failed");
+                    }
+                }
+        );
+    }
 }
