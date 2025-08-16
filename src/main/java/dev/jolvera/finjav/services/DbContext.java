@@ -22,6 +22,7 @@ public class DbContext {
         InitSchema();
     }
 
+    // TODO: Refactor for a synchronous method instead; viewModels start async
     // async handle
     public <T> CompletableFuture<T> withHandleAsync(HandleCallback<T, RuntimeException> callback) {
         return CompletableFuture.supplyAsync(() ->

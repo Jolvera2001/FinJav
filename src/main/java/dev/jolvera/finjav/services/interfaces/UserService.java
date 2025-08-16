@@ -8,6 +8,7 @@ import java.util.Optional;
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 
+// TODO: Refactor, can be synchronous while viewModels start Async
 public interface UserService {
     CompletableFuture<Optional<User>> FindById(UUID id);
     CompletableFuture<List<User>> FindAll();
