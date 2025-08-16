@@ -11,6 +11,7 @@ import java.util.concurrent.CompletableFuture;
 public interface UserService {
     CompletableFuture<Optional<User>> FindById(UUID id);
     CompletableFuture<List<User>> FindAll();
+    CompletableFuture<User> Login(String username, String password);
     CompletableFuture<UUID> CreateUser(UserDto user);
     CompletableFuture<Integer> UpdateUser(UserDto user);
     CompletableFuture<Integer> DeleteById(UUID id);

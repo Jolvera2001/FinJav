@@ -21,6 +21,10 @@ public interface UserDao {
     @RegisterBeanMapper(User.class)
     List<User> FindAll();
 
+    @SqlQuery("SELECT * FROM users WHERE username = :username")
+    @RegisterBeanMapper(User.class)
+    User Login(@Bind("username") String username);
+
     @SqlUpdate("INSERT INTO users (id, name, email, password) VALUES (:name, :email, :password)")
     @GetGeneratedKeys("id")
     UUID CreateUser(@BindBean UserDto userDto);

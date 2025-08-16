@@ -4,17 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ee34415-2bf3-4076-9fdc-abea22d4f830" name="Changes" comment="updated gitignore and added table creation">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/controllers/AccountDialogController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/viewModels/BaseViewModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/dev/jolvera/finjav/account-dialog.fxml" afterDir="false" />
+    <list default="true" id="3ee34415-2bf3-4076-9fdc-abea22d4f830" name="Changes" comment="making dialog stuff idk">
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/utils/PasswordUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/viewModels/AccountDialogViewModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/controllers/MainPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/services/DbContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/services/DbContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/services/UserServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/services/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/viewModels/MainViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/viewModels/MainViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/controllers/AccountDialogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/controllers/AccountDialogController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/daos/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/daos/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/services/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/services/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/services/interfaces/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/services/interfaces/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/dev/jolvera/finjav/main-page-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dev/jolvera/finjav/main-page-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +102,7 @@
     "project.structure.last.edited": "Global Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.29655173",
-    "settings.editor.selected.configurable": "AndroidSdkUpdater",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -128,7 +128,7 @@
       <updated>1755268977676</updated>
       <workItem from="1755268979397" duration="120000" />
       <workItem from="1755269298618" duration="6896000" />
-      <workItem from="1755301071895" duration="11904000" />
+      <workItem from="1755301071895" duration="15410000" />
     </task>
     <task id="LOCAL-00001" summary="I'm so tired">
       <option name="closed" value="true" />
@@ -162,7 +162,15 @@
       <option name="project" value="LOCAL" />
       <updated>1755320630523</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="making dialog stuff idk">
+      <option name="closed" value="true" />
+      <created>1755363965624</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1755363965624</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -173,7 +181,8 @@
     <MESSAGE value="added interface and service" />
     <MESSAGE value="setting commands up for tables" />
     <MESSAGE value="updated gitignore and added table creation" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated gitignore and added table creation" />
+    <MESSAGE value="making dialog stuff idk" />
+    <option name="LAST_COMMIT_MESSAGE" value="making dialog stuff idk" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

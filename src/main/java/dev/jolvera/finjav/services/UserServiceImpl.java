@@ -4,6 +4,7 @@ import dev.jolvera.finjav.daos.UserDao;
 import dev.jolvera.finjav.models.User;
 import dev.jolvera.finjav.models.dtos.UserDto;
 import dev.jolvera.finjav.services.interfaces.UserService;
+import dev.jolvera.finjav.utils.PasswordUtils;
 import jakarta.inject.Inject;
 
 import java.util.List;
@@ -33,6 +34,19 @@ public class UserServiceImpl implements UserService {
     public CompletableFuture<List<User>> FindAll() {
         return dbContext.withHandleAsync(handle ->
                 handle.attach(UserDao.class).FindAll());
+    }
+
+    @Override
+    public CompletableFuture<User> Login(String username, String password) {
+        return dbContext.withHandleAsync(handle ->
+                handle.attach(UserDao.class).Login(username))
+                .thenApply(user -> {
+                    if (PasswordUtils.VerifyPassword(password, user.getPasswordHash())) {
+                        return new User(user.getId(), user.getName(), user.getEmail());
+                    } else {
+                        return null;
+                    }
+                });
     }
 
     @Override

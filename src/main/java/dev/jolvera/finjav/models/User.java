@@ -1,8 +1,6 @@
 package dev.jolvera.finjav.models;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.util.UUID;
@@ -16,5 +14,11 @@ public class User {
     private LocalDate dateModified;
     private String name;
     private String email;
-    private String password;
+    private String passwordHash;
+
+    public User(final UUID id, final String name, final String email) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+    }
 }

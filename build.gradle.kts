@@ -37,6 +37,10 @@ javafx {
 }
 
 dependencies {
+    // Lombok
+    compileOnly("org.projectlombok:lombok:1.18.38")
+    annotationProcessor("org.projectlombok:lombok:1.18.38")
+
     // javafx related
     implementation("org.controlsfx:controlsfx:11.2.1")
     implementation("net.synedra:validatorfx:0.6.1") {
@@ -49,6 +53,7 @@ dependencies {
     // validation
     implementation("jakarta.validation:jakarta.validation-api:3.1.1")
     implementation("org.hibernate.validator:hibernate-validator:9.0.1.Final")
+    implementation("org.mindrot:jbcrypt:0.4")
 
     // DB
     implementation(platform("org.jdbi:jdbi3-bom:3.49.5"))
