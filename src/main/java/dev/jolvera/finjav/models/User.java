@@ -16,9 +16,14 @@ public class User {
     private String email;
     private String passwordHash;
 
-    public User(final UUID id, final String name, final String email) {
-        this.id = id;
-        this.name = name;
-        this.email = email;
+    public User withoutPassword() {
+        return new User(
+                this.id,
+                this.dateCreated,
+                this.dateModified,
+                this.name,
+                this.email,
+                null
+        );
     }
 }

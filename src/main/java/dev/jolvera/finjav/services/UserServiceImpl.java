@@ -40,19 +40,33 @@ public class UserServiceImpl implements UserService {
     public CompletableFuture<User> Login(String username, String password) {
         return dbContext.withHandleAsync(handle ->
                 handle.attach(UserDao.class).Login(username))
-                .thenApply(user -> {
+                .thenApplyAsync(user -> {
+                    if (user == null) {
+                        return null;
+                    }
+
                     if (PasswordUtils.VerifyPassword(password, user.getPasswordHash())) {
-                        return new User(user.getId(), user.getName(), user.getEmail());
+                        return user.withoutPassword();
                     } else {
                         return null;
                     }
+                })
+                .exceptionally(throwable -> {
+                    System.out.println(throwable.getMessage());
+                    return null;
                 });
     }
 
     @Override
-    public CompletableFuture<UUID> CreateUser(UserDto user) {
+    public CompletableFuture<User> Register(UserDto user) {
         return dbContext.withHandleAsync(handle ->
-                handle.attach(UserDao.class).CreateUser(user));
+                handle.attach(UserDao.class).CreateUser(user))
+                .thenComposeAsync(this::FindById)
+                .thenApply(newUser -> newUser.map(User::withoutPassword).orElse(null))
+                .exceptionally(throwable -> {
+                    System.out.println(throwable.getMessage());
+                    return null;
+                });
     }
 
     @Override
