@@ -18,11 +18,32 @@ public class DbContext {
     public DbContext(Jdbi jdbi) {
         this.jdbi = jdbi;
         this.virtualExectutor = Executors.newVirtualThreadPerTaskExecutor();
+
+        InitSchema();
     }
 
     // async handle
     public <T> CompletableFuture<T> withHandleAsync(HandleCallback<T, RuntimeException> callback) {
         return CompletableFuture.supplyAsync(() ->
                 jdbi.withHandle(callback), virtualExectutor);
+    }
+
+    private void InitSchema() {
+        this.jdbi.withHandle(handle -> {
+           handle.execute("""
+            CREATE TABLE IF NOT EXISTS users (
+                )
+            """);
+
+           handle.execute("""
+            CREATE TABLE IF NOT EXISTS recurrences (
+                
+                )
+            """);
+
+            return null;
+        });
+
+
     }
 }
