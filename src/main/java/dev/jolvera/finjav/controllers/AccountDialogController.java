@@ -3,6 +3,7 @@ package dev.jolvera.finjav.controllers;
 import dev.jolvera.finjav.models.User;
 import dev.jolvera.finjav.viewModels.AccountDialogViewModel;
 import jakarta.inject.Inject;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -31,7 +32,6 @@ public class AccountDialogController {
     public AccountDialogController(AccountDialogViewModel viewModel) {
         this.viewModel = viewModel;
     }
-
 
     @FXML
     private void initialize() {
@@ -76,7 +76,11 @@ public class AccountDialogController {
         viewModel.userProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue != null) {
                 this.result = newValue;
-                closeDialog();
+
+                Platform.runLater(() -> {
+                    Stage stage = (Stage)LoginConfirmButton.getScene().getWindow();
+                    stage.close();
+                });
             }
         });
     }

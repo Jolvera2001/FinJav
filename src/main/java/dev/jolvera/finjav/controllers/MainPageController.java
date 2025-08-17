@@ -61,15 +61,18 @@ public class MainPageController {
             dialog.setDialogPane(dialogPane);
             dialog.setTitle("Login/Register Account");
 
-            dialog.setResultConverter(buttonType -> controller.getResult());
-
             Optional<User> result = dialog.showAndWait();
 
             if (result.isPresent()) {
                 User user = result.get();
                 viewModel.activeUserProperty().setValue(user);
             } else {
-                System.out.println("Account dialog was cancelled");
+                User controllerResult = controller.getResult();
+                if (controllerResult != null) {
+                    viewModel.activeUserProperty().setValue(controllerResult);
+                } else {
+                    System.out.println("Account dialog was cancelled");
+                }
             }
         } catch  (Exception ex) {
             System.out.println(ex.getMessage());
