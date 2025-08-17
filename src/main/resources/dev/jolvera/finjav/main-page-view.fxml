@@ -41,7 +41,7 @@
 
     <bottom>
         <ToolBar>
-            <Label text="Status: ..." />
+            <Label fx:id="CurrentUserDisplay" />
         </ToolBar>
     </bottom>
 </BorderPane>

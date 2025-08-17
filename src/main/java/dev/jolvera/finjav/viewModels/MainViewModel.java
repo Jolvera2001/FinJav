@@ -3,11 +3,9 @@ package dev.jolvera.finjav.viewModels;
 import dev.jolvera.finjav.models.User;
 import dev.jolvera.finjav.services.interfaces.UserService;
 import jakarta.inject.Inject;
-import jakarta.inject.Singleton;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 
-@Singleton
 public class MainViewModel extends BaseViewModel {
     private UserService userService;
 

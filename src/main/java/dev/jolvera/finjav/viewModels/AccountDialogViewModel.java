@@ -1,18 +1,15 @@
 package dev.jolvera.finjav.viewModels;
 
 import dev.jolvera.finjav.models.User;
-import dev.jolvera.finjav.models.dtos.UserDto;
 import dev.jolvera.finjav.services.interfaces.UserService;
 import dev.jolvera.finjav.utils.PasswordUtils;
 import jakarta.inject.Inject;
-import jakarta.inject.Singleton;
 import javafx.beans.InvalidationListener;
 import javafx.beans.property.*;
 
 import java.time.LocalDate;
 import java.util.UUID;
 
-@Singleton
 public class AccountDialogViewModel extends BaseViewModel {
     private final UserService userService;
 

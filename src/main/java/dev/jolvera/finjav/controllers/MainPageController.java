@@ -17,6 +17,7 @@ public class MainPageController {
     @FXML private Button AddRecurrenceButton;
     @FXML private Button RefreshButton;
     @FXML private MenuItem AccountMenuButton;
+    @FXML private Label CurrentUserDisplay;
 
     private MainViewModel viewModel;
     private FinJavComponent component;
@@ -30,24 +31,31 @@ public class MainPageController {
     @FXML
     private void initialize() {
         setupHandlers();
+        setupListeners();
 
         if (viewModel.activeUserProperty().getValue() == null) {
             Platform.runLater(this::handleOpenAccountDialog);
         }
-
-        viewModel.activeUserProperty().addListener((observable, oldValue, newValue) -> {
-            if (newValue == null) {
-                handleOpenAccountDialog();
-            } else {
-                System.out.println("User already logged in somehow idk");
-            }
-        });
     }
 
     private void setupHandlers() {
         AddRecurrenceButton.setOnAction(e -> System.out.println("addRecurrence pressed"));
         RefreshButton.setOnAction(e -> System.out.println("refresh pressed"));
-        AccountMenuButton.setOnAction(e -> handleOpenAccountDialog());
+    }
+
+    private void setupListeners() {
+        viewModel.activeUserProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue == null) {
+                CurrentUserDisplay.setText("");
+                AccountMenuButton.setText("Log in");
+                AccountMenuButton.setOnAction(e -> handleOpenAccountDialog());
+                handleOpenAccountDialog();
+            } else {
+                CurrentUserDisplay.setText("User: " + newValue.getName());
+                AccountMenuButton.setText("Log out");
+                AccountMenuButton.setOnAction(e -> logOut());
+            }
+        });
     }
 
     private void handleOpenAccountDialog() {
@@ -77,6 +85,10 @@ public class MainPageController {
         } catch  (Exception ex) {
             System.out.println(ex.getMessage());
         }
+    }
+
+    private void logOut() {
+        viewModel.activeUserProperty().setValue(null);
     }
 
 }
