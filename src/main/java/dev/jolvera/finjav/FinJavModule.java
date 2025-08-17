@@ -1,7 +1,10 @@
 package dev.jolvera.finjav;
 
+import dagger.Binds;
 import dagger.Module;
 import dagger.Provides;
+import dev.jolvera.finjav.services.UserServiceImpl;
+import dev.jolvera.finjav.services.interfaces.UserService;
 import org.jdbi.v3.core.Jdbi;
 import org.jdbi.v3.sqlobject.SqlObjectPlugin;
 import org.sqlite.SQLiteDataSource;
@@ -9,10 +12,10 @@ import jakarta.inject.Singleton;
 import javax.sql.DataSource;
 
 @Module
-public class FinJavModule {
+public abstract class FinJavModule {
     @Provides
     @Singleton
-    public DataSource provideDataSource() {
+    static DataSource provideDataSource() {
         SQLiteDataSource ds = new SQLiteDataSource();
         ds.setUrl("jdbc:sqlite:finjav.db");
         return ds;
@@ -20,8 +23,12 @@ public class FinJavModule {
 
     @Provides
     @Singleton
-    public Jdbi ProvideJdbi(DataSource dataSource) {
+    static Jdbi ProvideJdbi(DataSource dataSource) {
         return Jdbi.create(dataSource)
                 .installPlugin(new SqlObjectPlugin());
     }
+
+    @Binds
+    @Singleton
+    abstract UserService bindUserService(UserServiceImpl userServiceImpl);
 }

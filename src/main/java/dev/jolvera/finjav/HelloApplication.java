@@ -1,19 +1,35 @@
 package dev.jolvera.finjav;
 
+import dev.jolvera.finjav.controllers.MainPageController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class HelloApplication extends Application {
+    private FinJavComponent finJavComponent;
+
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("main-page-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 800, 600);
-        stage.setTitle("Hello!");
-        stage.setScene(scene);
-        stage.show();
+        this.finJavComponent = DaggerFinJavComponent.create();
+        loadMainPage(stage);
+    }
+
+    private void loadMainPage(Stage primaryStage) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("main-page-view.fxml"));
+
+            MainPageController mainPageController = finJavComponent.mainPageController();
+            fxmlLoader.setController(mainPageController);
+
+            Parent root = fxmlLoader.load();
+            primaryStage.setScene(new Scene(root));
+            primaryStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

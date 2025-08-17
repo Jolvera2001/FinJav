@@ -6,11 +6,13 @@ import dev.jolvera.finjav.models.dtos.UserDto;
 import dev.jolvera.finjav.services.interfaces.UserService;
 import dev.jolvera.finjav.utils.PasswordUtils;
 import jakarta.inject.Inject;
+import jakarta.inject.Singleton;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+@Singleton
 public class UserServiceImpl implements UserService {
     private final DbContext dbContext;
 

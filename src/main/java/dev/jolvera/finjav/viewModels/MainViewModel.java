@@ -11,6 +11,8 @@ public class MainViewModel extends BaseViewModel {
 
     private ObjectProperty<User> activeUser = new SimpleObjectProperty<>();
 
+    public ObjectProperty<User> activeUserProperty() { return activeUser; }
+
     @Inject
     public MainViewModel(UserService userService) {
         this.userService = userService;

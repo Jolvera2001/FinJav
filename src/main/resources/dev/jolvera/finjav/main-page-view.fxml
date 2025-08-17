@@ -11,8 +11,7 @@
 <?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TabPane?>
-<BorderPane xmlns:fx="http://javafx.com/fxml"
-            fx:controller="dev.jolvera.finjav.controllers.MainPageController">
+<BorderPane xmlns:fx="http://javafx.com/fxml">
     <!-- topbar -->
     <top>
         <VBox>
@@ -26,11 +25,10 @@
             </MenuBar>
 
             <ToolBar>
-                <Button text="Add Entry" onAction="#addTransaction" />
-                <Button text="Create Projection" onAction="#createProjection" />
-                <Button text="Refresh" onAction="#refreshTransactions" />
+                <Button fx:id="AddRecurrenceButton" text="Add Recurrence" />
+                <Button fx:id="RefreshButton" text="Refresh" />
                 <Separator />
-                <TextField fx:id="searchField" promptText="Search transactions..." />
+                <TextField fx:id="SearchField" promptText="Search recurrences..." />
             </ToolBar>
         </VBox>
     </top>

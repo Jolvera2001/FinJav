@@ -27,8 +27,16 @@ public class AccountDialogController {
     private AccountDialogViewModel viewModel;
     private User result;
 
-    @FXML
     @Inject
+    public AccountDialogController(AccountDialogViewModel viewModel) {
+        this.viewModel = viewModel;
+    }
+
+    public User getResult() {
+        return this.result;
+    }
+
+    @FXML
     private void Initialize(AccountDialogViewModel viewModel) {
         this.viewModel = viewModel;
         setupBindings();
@@ -97,10 +105,6 @@ public class AccountDialogController {
         RegisterUsernameInput.clear();
         RegisterPasswordInput.clear();
         RegisterPasswordInput.clear();
-    }
-
-    private User getResult() {
-        return this.result;
     }
 
     private void closeDialog() {
