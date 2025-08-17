@@ -1,5 +1,6 @@
 package dev.jolvera.finjav.controllers;
 
+import dev.jolvera.finjav.models.User;
 import dev.jolvera.finjav.viewModels.AccountDialogViewModel;
 import jakarta.inject.Inject;
 import javafx.fxml.FXML;
@@ -7,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class AccountDialogController {
     @FXML public TextField LoginUsernameInput;
@@ -23,7 +25,7 @@ public class AccountDialogController {
     @FXML public Label errorLabel;
 
     private AccountDialogViewModel viewModel;
-
+    private User result;
 
     @FXML
     @Inject
@@ -62,17 +64,47 @@ public class AccountDialogController {
                         )
                 )
         );
+
+        viewModel.userProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue != null) {
+                this.result = newValue;
+                closeDialog();
+            }
+        });
     }
 
     private void setupHandlers() {
         LoginConfirmButton.setOnAction(e -> handleLogin());
+        LoginClearFieldsButton.setOnAction(e -> handleClearLoginFields());
         RegisterConfirmButton.setOnAction(e -> handleRegister());
+        RegisterClearFieldsButton.setOnAction(e -> handleClearRegisterFields());
     }
 
     private void handleLogin() {
         viewModel.attemptLogin();
     }
+
     private void handleRegister() {
         viewModel.attemptRegister();
+    }
+
+    private void handleClearLoginFields() {
+        LoginUsernameInput.clear();
+        LoginPasswordInput.clear();
+    }
+
+    private void handleClearRegisterFields() {
+        RegisterUsernameInput.clear();
+        RegisterPasswordInput.clear();
+        RegisterPasswordInput.clear();
+    }
+
+    private User getResult() {
+        return this.result;
+    }
+
+    private void closeDialog() {
+        Stage stage = (Stage) LoginConfirmButton.getScene().getWindow();
+        stage.close();
     }
 }

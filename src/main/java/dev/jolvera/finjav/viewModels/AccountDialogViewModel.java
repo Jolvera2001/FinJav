@@ -6,13 +6,9 @@ import dev.jolvera.finjav.services.interfaces.UserService;
 import dev.jolvera.finjav.utils.PasswordUtils;
 import jakarta.inject.Inject;
 import javafx.beans.InvalidationListener;
-import javafx.beans.property.BooleanProperty;
-import javafx.beans.property.SimpleBooleanProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import javafx.beans.property.*;
 
 import java.util.UUID;
-import java.util.concurrent.CompletableFuture;
 
 public class AccountDialogViewModel extends BaseViewModel {
     private final UserService userService;
@@ -26,7 +22,8 @@ public class AccountDialogViewModel extends BaseViewModel {
     private final StringProperty registerEmail = new SimpleStringProperty("");
     private final StringProperty registerPassword = new SimpleStringProperty("");
 
-    private final BooleanProperty hasError =  new SimpleBooleanProperty(false);
+    private final BooleanProperty hasError = new SimpleBooleanProperty(false);
+    private final Property<User> userProperty = new SimpleObjectProperty<>();
 
     public StringProperty loginUsernameProperty() { return loginUsername; }
     public StringProperty loginPasswordProperty() { return loginPassword; }
@@ -36,6 +33,7 @@ public class AccountDialogViewModel extends BaseViewModel {
     public StringProperty registerPasswordProperty() { return registerPassword; }
 
     public BooleanProperty hasErrorProperty() { return hasError; }
+    public Property<User> userProperty() { return userProperty; }
 
     @Inject
     public AccountDialogViewModel(UserService userService) {
@@ -73,6 +71,8 @@ public class AccountDialogViewModel extends BaseViewModel {
                 user -> {
                     if (user == null) {
                         showError("Login failed");
+                    } else {
+                        userProperty.setValue(user);
                     }
                 }
         );
@@ -96,6 +96,8 @@ public class AccountDialogViewModel extends BaseViewModel {
                 user -> {
                     if (user == null) {
                         showError("Register failed");
+                    } else {
+                        userProperty.setValue(user);
                     }
                 }
         );
