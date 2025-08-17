@@ -10,10 +10,10 @@ import java.util.concurrent.CompletableFuture;
 
 // TODO: Refactor, can be synchronous while viewModels start Async
 public interface UserService {
-    CompletableFuture<Optional<User>> FindById(UUID id);
-    CompletableFuture<List<User>> FindAll();
-    CompletableFuture<User> Login(String username, String password);
-    CompletableFuture<User> Register(UserDto user);
-    CompletableFuture<Integer> UpdateUser(UserDto user);
-    CompletableFuture<Integer> DeleteById(UUID id);
+    Optional<User> FindById(UUID id);
+    List<User> FindAll();
+    User Login(String username, String password);
+    User Register(UserDto user);
+    int UpdateUser(UserDto user);
+    int DeleteById(UUID id);
 }

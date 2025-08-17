@@ -10,7 +10,6 @@ import jakarta.inject.Inject;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
-import java.util.concurrent.CompletableFuture;
 
 public class UserServiceImpl implements UserService {
     private final DbContext dbContext;
@@ -21,63 +20,55 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public CompletableFuture<Optional<User>> FindById(UUID id) {
+    public Optional<User> FindById(UUID id) {
         if (id == null) {
-            return  CompletableFuture.completedFuture(Optional.empty());
+            return Optional.empty();
         }
 
-        return dbContext.withHandleAsync(handle ->
-                Optional.ofNullable(handle.attach(UserDao.class).FindById(id)));
+        return dbContext.withHandle(handle ->
+            Optional.ofNullable(handle.attach(UserDao.class).FindById(id)));
     }
 
     @Override
-    public CompletableFuture<List<User>> FindAll() {
-        return dbContext.withHandleAsync(handle ->
+    public List<User> FindAll() {
+        return dbContext.withHandle(handle ->
                 handle.attach(UserDao.class).FindAll());
     }
 
     @Override
-    public CompletableFuture<User> Login(String username, String password) {
-        return dbContext.withHandleAsync(handle ->
-                handle.attach(UserDao.class).Login(username))
-                .thenApplyAsync(user -> {
-                    if (user == null) {
-                        return null;
-                    }
+    public User Login(String username, String password) {
+        var user = dbContext.withHandle(handle ->
+                handle.attach(UserDao.class).Login(username));
 
-                    if (PasswordUtils.VerifyPassword(password, user.getPasswordHash())) {
-                        return user.withoutPassword();
-                    } else {
-                        return null;
-                    }
-                })
-                .exceptionally(throwable -> {
-                    System.out.println(throwable.getMessage());
-                    return null;
-                });
+        if (user == null) {
+            return null;
+        }
+
+        if (PasswordUtils.VerifyPassword(password, user.getPasswordHash())) {
+            return user.withoutPassword();
+        } else {
+            return null;
+        }
     }
 
     @Override
-    public CompletableFuture<User> Register(UserDto user) {
-        return dbContext.withHandleAsync(handle ->
-                handle.attach(UserDao.class).CreateUser(user))
-                .thenComposeAsync(this::FindById)
-                .thenApply(newUser -> newUser.map(User::withoutPassword).orElse(null))
-                .exceptionally(throwable -> {
-                    System.out.println(throwable.getMessage());
-                    return null;
-                });
+    public User Register(UserDto user) {
+        var registeredId = dbContext.withHandle(handle ->
+                handle.attach(UserDao.class).CreateUser(user));
+
+        var newUser = this.FindById(registeredId);
+        return newUser.map(User::withoutPassword).orElse(null);
     }
 
     @Override
-    public CompletableFuture<Integer> UpdateUser(UserDto user) {
-        return dbContext.withHandleAsync(handle ->
+    public int UpdateUser(UserDto user) {
+        return dbContext.withHandle(handle ->
                 handle.attach(UserDao.class).UpdateUser(user));
     }
 
     @Override
-    public CompletableFuture<Integer> DeleteById(UUID id) {
-        return dbContext.withHandleAsync(handle ->
+    public int DeleteById(UUID id) {
+        return dbContext.withHandle(handle ->
                 handle.attach(UserDao.class).DeleteById(id));
     }
 }

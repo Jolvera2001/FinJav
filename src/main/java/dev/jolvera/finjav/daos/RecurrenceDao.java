@@ -13,7 +13,6 @@ import java.util.List;
 import java.util.UUID;
 
 public interface RecurrenceDao {
-
     @SqlQuery("SELECT * FROM recurrences WHERE id = :id")
     @RegisterBeanMapper(Recurrence.class)
     Recurrence FindById(@Bind("id") UUID id);
@@ -22,7 +21,7 @@ public interface RecurrenceDao {
     @RegisterBeanMapper(Recurrence.class)
     List<Recurrence> findAll();
 
-    @SqlUpdate("INSERT INTO recurrences (id, name, is_income, recurring_date) VALUES (:name, :is_income, :recurring_date")
+    @SqlUpdate("INSERT INTO recurrences (id, name, is_income, recurring_date) VALUES (:id, :name, :is_income, :recurring_date)")
     @GetGeneratedKeys("id")
     UUID CreateRecurrence(@BindBean RecurrenceDto recurrenceDto);
 

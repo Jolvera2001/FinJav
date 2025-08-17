@@ -12,6 +12,7 @@ import java.util.UUID;
 @NoArgsConstructor
 public class Recurrence {
     private UUID id;
+    private UUID userId;
     private LocalDate dateCreated;
     private LocalDate dateModified;
     private String name;

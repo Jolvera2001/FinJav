@@ -22,11 +22,8 @@ public class DbContext {
         InitSchema();
     }
 
-    // TODO: Refactor for a synchronous method instead; viewModels start async
-    // async handle
-    public <T> CompletableFuture<T> withHandleAsync(HandleCallback<T, RuntimeException> callback) {
-        return CompletableFuture.supplyAsync(() ->
-                jdbi.withHandle(callback), virtualExectutor);
+    public <T> T withHandle(HandleCallback<T, RuntimeException> callback) {
+                return jdbi.withHandle(callback);
     }
 
     private void InitSchema() {
@@ -38,18 +35,20 @@ public class DbContext {
                 date_Modified DATETIME NOT NULL,
                 name TEXT NOT NULL,
                 email TEXT NOT NULL,
-                password TEXT NOT NULL,
+                password TEXT NOT NULL
                 )
             """);
 
            handle.execute("""
             CREATE TABLE IF NOT EXISTS recurrences (
                 id TEXT NOT NULL PRIMARY KEY,
+                user_id TEXT NOT NULL,
                 date_created DATETIME NOT NULL,
                 date_Modified DATETIME NOT NULL,
                 name TEXT NOT NULL,
                 is_income BOOLEAN NOT NULL,
                 recurring_date DATETIME NOT NULL,
+                FOREIGN KEY (user_id) REFERENCES users(id)
                 )
             """);
 
