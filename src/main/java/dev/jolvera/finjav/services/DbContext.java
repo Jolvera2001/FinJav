@@ -35,7 +35,7 @@ public class DbContext {
                 date_Modified DATETIME NOT NULL,
                 name TEXT NOT NULL,
                 email TEXT NOT NULL,
-                password TEXT NOT NULL
+                password_hash TEXT NOT NULL
                 )
             """);
 

@@ -26,7 +26,8 @@ public class HelloApplication extends Application {
             fxmlLoader.setController(mainPageController);
 
             Parent root = fxmlLoader.load();
-            primaryStage.setScene(new Scene(root));
+            Scene scene = new Scene(root, 1200, 800);
+            primaryStage.setScene(scene);
             primaryStage.show();
         } catch (IOException e) {
             e.printStackTrace();

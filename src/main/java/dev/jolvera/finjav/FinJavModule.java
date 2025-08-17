@@ -3,9 +3,11 @@ package dev.jolvera.finjav;
 import dagger.Binds;
 import dagger.Module;
 import dagger.Provides;
+import dev.jolvera.finjav.models.dtos.UserDto;
 import dev.jolvera.finjav.services.UserServiceImpl;
 import dev.jolvera.finjav.services.interfaces.UserService;
 import org.jdbi.v3.core.Jdbi;
+import org.jdbi.v3.core.mapper.reflect.ConstructorMapper;
 import org.jdbi.v3.sqlobject.SqlObjectPlugin;
 import org.sqlite.SQLiteDataSource;
 import jakarta.inject.Singleton;
@@ -17,7 +19,7 @@ public abstract class FinJavModule {
     @Singleton
     static DataSource provideDataSource() {
         SQLiteDataSource ds = new SQLiteDataSource();
-        ds.setUrl("jdbc:sqlite:finjav.db");
+        ds.setUrl("jdbc:sqlite:finjav.sqlite");
         return ds;
     }
 

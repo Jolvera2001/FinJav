@@ -19,8 +19,7 @@
                 <Menu text="Account">
                     <MenuItem text="Overview" />
                     <SeparatorMenuItem />
-                    <MenuItem text="Switch User" />
-                    <MenuItem text="Log Out" />
+                    <MenuItem fx:id="AccountMenuButton" text="Log in" />
                 </Menu>
             </MenuBar>
 

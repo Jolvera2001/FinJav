@@ -1,8 +1,11 @@
 package dev.jolvera.finjav.controllers;
 
+import dev.jolvera.finjav.FinJavComponent;
+import dev.jolvera.finjav.HelloApplication;
 import dev.jolvera.finjav.models.User;
 import dev.jolvera.finjav.viewModels.MainViewModel;
 import jakarta.inject.Inject;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
@@ -13,17 +16,25 @@ public class MainPageController {
     @FXML private TextField SearchField;
     @FXML private Button AddRecurrenceButton;
     @FXML private Button RefreshButton;
+    @FXML private MenuItem AccountMenuButton;
 
     private MainViewModel viewModel;
+    private FinJavComponent component;
 
     @Inject
-    public MainPageController(MainViewModel viewModel) {
+    public MainPageController(MainViewModel viewModel, FinJavComponent component) {
         this.viewModel = viewModel;
+        this.component = component;
     }
 
     @FXML
-    private void Initialize() {
+    private void initialize() {
         setupHandlers();
+
+        if (viewModel.activeUserProperty().getValue() == null) {
+            Platform.runLater(this::handleOpenAccountDialog);
+        }
+
         viewModel.activeUserProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue == null) {
                 handleOpenAccountDialog();
@@ -36,13 +47,15 @@ public class MainPageController {
     private void setupHandlers() {
         AddRecurrenceButton.setOnAction(e -> System.out.println("addRecurrence pressed"));
         RefreshButton.setOnAction(e -> System.out.println("refresh pressed"));
+        AccountMenuButton.setOnAction(e -> handleOpenAccountDialog());
     }
 
     private void handleOpenAccountDialog() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("account-dialog.fxml"));
+            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("account-dialog.fxml"));
+            AccountDialogController controller = component.accountDialogController();
+            loader.setController(controller);
             DialogPane dialogPane = loader.load();
-            AccountDialogController controller = loader.getController();
 
             Dialog<User> dialog = new Dialog<>();
             dialog.setDialogPane(dialogPane);

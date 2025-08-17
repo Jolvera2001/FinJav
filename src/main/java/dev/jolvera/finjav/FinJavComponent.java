@@ -10,4 +10,5 @@ import jakarta.inject.Singleton;
 public interface FinJavComponent {
     MainPageController mainPageController();
     AccountDialogController accountDialogController();
+    FinJavComponent self();
 }

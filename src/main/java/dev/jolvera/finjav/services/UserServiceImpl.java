@@ -27,8 +27,10 @@ public class UserServiceImpl implements UserService {
             return Optional.empty();
         }
 
-        return dbContext.withHandle(handle ->
+        var user = dbContext.withHandle(handle ->
             Optional.ofNullable(handle.attach(UserDao.class).FindById(id)));
+
+        return user.map(User::withoutPassword);
     }
 
     @Override
@@ -54,16 +56,15 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User Register(UserDto user) {
-        var registeredId = dbContext.withHandle(handle ->
-                handle.attach(UserDao.class).CreateUser(user));
-
-        var newUser = this.FindById(registeredId);
-        return newUser.map(User::withoutPassword).orElse(null);
+    public void Register(User user) {
+        dbContext.withHandle(handle -> {
+            handle.attach(UserDao.class).CreateUser(user);
+            return null;
+        });
     }
 
     @Override
-    public int UpdateUser(UserDto user) {
+    public int UpdateUser(User user) {
         return dbContext.withHandle(handle ->
                 handle.attach(UserDao.class).UpdateUser(user));
     }

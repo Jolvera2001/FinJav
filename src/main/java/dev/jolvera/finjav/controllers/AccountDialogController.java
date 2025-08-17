@@ -32,15 +32,15 @@ public class AccountDialogController {
         this.viewModel = viewModel;
     }
 
-    public User getResult() {
-        return this.result;
-    }
 
     @FXML
-    private void Initialize(AccountDialogViewModel viewModel) {
-        this.viewModel = viewModel;
+    private void initialize() {
         setupBindings();
         setupHandlers();
+    }
+
+    public User getResult() {
+        return this.result;
     }
 
     private void setupBindings() {

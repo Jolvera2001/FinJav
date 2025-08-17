@@ -13,7 +13,7 @@ public interface UserService {
     Optional<User> FindById(UUID id);
     List<User> FindAll();
     User Login(String username, String password);
-    User Register(UserDto user);
-    int UpdateUser(UserDto user);
+    void Register(User user);
+    int UpdateUser(User user);
     int DeleteById(UUID id);
 }

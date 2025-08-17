@@ -9,6 +9,7 @@ import jakarta.inject.Singleton;
 import javafx.beans.InvalidationListener;
 import javafx.beans.property.*;
 
+import java.time.LocalDate;
 import java.util.UUID;
 
 @Singleton
@@ -87,19 +88,22 @@ public class AccountDialogViewModel extends BaseViewModel {
 
         executeAsync(
                 () -> {
-                    var dto = new UserDto(
+                    var user = new User(
                             UUID.randomUUID(),
+                            LocalDate.now(),
+                            LocalDate.now(),
                             registerUsername.get(),
                             registerEmail.get(),
                             PasswordUtils.HashPassword(registerPassword.get())
                     );
-                    return userService.Register(dto);
+                    userService.Register(user);
+                    return userService.FindById(user.getId());
                 },
                 user -> {
-                    if (user == null) {
+                    if (user.isEmpty()) {
                         showError("Register failed");
                     } else {
-                        userProperty.setValue(user);
+                        userProperty.setValue(user.get());
                     }
                 }
         );

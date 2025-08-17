@@ -4,17 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ee34415-2bf3-4076-9fdc-abea22d4f830" name="Changes" comment="wowzers">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/FinJavComponent.java" afterDir="false" />
+    <list default="true" id="3ee34415-2bf3-4076-9fdc-abea22d4f830" name="Changes" comment="wired everything together, not sure about the implications of everything being singletons">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/FinJavComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/FinJavComponent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/FinJavModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/FinJavModule.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/HelloApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/controllers/AccountDialogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/controllers/AccountDialogController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/controllers/MainPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/controllers/MainPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/daos/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/daos/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/models/dtos/RecurrenceDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/models/dtos/RecurrenceDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/models/dtos/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/models/dtos/UserDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/services/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/services/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/services/interfaces/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/services/interfaces/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/viewModels/AccountDialogViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/viewModels/AccountDialogViewModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/viewModels/MainViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/viewModels/MainViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/dev/jolvera/finjav/account-dialog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dev/jolvera/finjav/account-dialog.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/dev/jolvera/finjav/main-page-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dev/jolvera/finjav/main-page-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,6 +74,10 @@
   }
 }</component>
   <component name="GradleScriptDefinitionsStorage" workingDir="$PROJECT_DIR$" gradleHome="$USER_HOME$/.gradle/wrapper/dists/gradle-8.13-bin/5xuhj0ry160q40clulazy9h7d/gradle-8.13" javaHome="$PROJECT_DIR$/../../../Program Files/Eclipse Adoptium/jdk-21.0.4.7-hotspot" gradleVersion="8.13" />
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -88,7 +96,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Gradle.Build FinJav.executor": "Run",
-    "Gradle.FinJav [:dev.jolvera.finjav.Launcher.main()].executor": "Run",
+    "Gradle.Download Sources.executor": "Run",
+    "Gradle.FinJav [:dev.jolvera.finjav.Launcher.main()].executor": "Debug",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
@@ -142,6 +151,9 @@
       </set>
     </attachedChunks>
   </component>
+  <component name="StructureViewState">
+    <option name="selectedTab" value="Logical" />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="3ee34415-2bf3-4076-9fdc-abea22d4f830" name="Changes" comment="" />
@@ -153,7 +165,7 @@
       <workItem from="1755269298618" duration="6896000" />
       <workItem from="1755301071895" duration="19997000" />
       <workItem from="1755388630340" duration="5512000" />
-      <workItem from="1755455619697" duration="2485000" />
+      <workItem from="1755455619697" duration="8949000" />
     </task>
     <task id="LOCAL-00001" summary="I'm so tired">
       <option name="closed" value="true" />
@@ -259,7 +271,15 @@
       <option name="project" value="LOCAL" />
       <updated>1755401655923</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="wired everything together, not sure about the implications of everything being singletons">
+      <option name="closed" value="true" />
+      <created>1755458431803</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1755458431803</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -279,7 +299,29 @@
     <MESSAGE value="made things sync" />
     <MESSAGE value="updated gitignore" />
     <MESSAGE value="wowzers" />
-    <option name="LAST_COMMIT_MESSAGE" value="wowzers" />
+    <MESSAGE value="wired everything together, not sure about the implications of everything being singletons" />
+    <option name="LAST_COMMIT_MESSAGE" value="wired everything together, not sure about the implications of everything being singletons" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/viewModels/AccountDialogViewModel.java</url>
+          <line>84</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/controllers/MainPageController.java</url>
+          <line>67</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/viewModels/AccountDialogViewModel.java</url>
+          <line>66</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -43,3 +43,4 @@ bin/
 /.idea/dataSources.local.xml
 
 /*.sqlite
+/*.db
