@@ -12,7 +12,7 @@ import kotlinx.coroutines.javafx.JavaFx
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-abstract class BaseViewModel: AutoCloseable {
+abstract class BaseViewModel {
     protected val isLoading = SimpleBooleanProperty(false)
     protected val errorMessage = SimpleStringProperty("")
     protected val scope = CoroutineScope(Dispatchers.JavaFx + SupervisorJob())
@@ -41,7 +41,7 @@ abstract class BaseViewModel: AutoCloseable {
         }
     }
 
-    override fun close() {
+    open fun close() {
         scope.cancel()
     }
 }
