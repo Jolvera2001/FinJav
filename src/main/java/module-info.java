@@ -19,8 +19,8 @@ module dev.jolvera.finjav {
     requires jakarta.validation;
     requires jbcrypt;
 
-    opens dev.jolvera.finjav to javafx.fxml;
     exports dev.jolvera.finjav;
     exports dev.jolvera.finjav.controllers;
+    opens dev.jolvera.finjav to javafx.fxml;
     opens dev.jolvera.finjav.controllers to javafx.fxml;
 }

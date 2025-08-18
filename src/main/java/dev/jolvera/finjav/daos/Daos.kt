@@ -2,7 +2,6 @@ package dev.jolvera.finjav.daos
 
 import dev.jolvera.finjav.models.Recurrence
 import dev.jolvera.finjav.models.User
-import dev.jolvera.finjav.models.dtos.RecurrenceDto
 import org.jdbi.v3.sqlobject.config.RegisterBeanMapper
 import org.jdbi.v3.sqlobject.customizer.Bind
 import org.jdbi.v3.sqlobject.customizer.BindBean
@@ -44,7 +43,7 @@ interface RecurrenceDao {
     fun findAllFromUser(@Bind("id") id: UUID): MutableList<Recurrence>
 
     @SqlUpdate("INSERT INTO recurrences (id, date_created, date_Modified, name, amount, is_income, recurring_date) VALUES (:id, :name, :amount, :isIncome, :recurringDate)")
-    fun createRecurrence(@BindBean recurrenceDto: RecurrenceDto)
+    fun createRecurrence(@BindBean recurrence: Recurrence)
 
     @SqlUpdate("UPDATE recurrences SET  date_modified = :dateModified, name = :name, amount = :amount, is_income = :isIncome, recurring_date = :recurringDate WHERE id = :id")
     fun updateRecurrence(@BindBean recurrence: Recurrence): Int
