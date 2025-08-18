@@ -1,14 +1,15 @@
-package dev.jolvera.finjav.utils;
+package dev.jolvera.finjav.utils
 
+import org.mindrot.jbcrypt.BCrypt
 
-import org.mindrot.jbcrypt.BCrypt;
+class PasswordUtils {
+    companion object {
+        fun hashPassword(password: String): String {
+            return BCrypt.hashpw(password, BCrypt.gensalt(12))
+        }
 
-public class PasswordUtils {
-    public static String HashPassword(String password) {
-        return BCrypt.hashpw(password, BCrypt.gensalt(12));
-    }
-
-    public static Boolean VerifyPassword(String plainPassword, String hashedPassword) {
-        return BCrypt.checkpw(plainPassword, hashedPassword);
+        fun verifyPassword(password: String, expectedPassword: String): Boolean {
+            return BCrypt.checkpw(password, expectedPassword)
+        }
     }
 }

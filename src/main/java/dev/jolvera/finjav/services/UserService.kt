@@ -12,20 +12,20 @@ class UserService(private val jdbi: Jdbi) : IUserService {
 
     override fun FindById(id: UUID): User? {
         return jdbi.withHandle<User?, Exception> { handle ->
-            handle.attach(UserDao::class).FindById(id)
+            handle.attach(UserDao::class).findById(id)
         }
     }
 
     override fun Login(username: String, password: String): User? {
         val user = jdbi.withHandle<User?, Exception> { handle ->
-            handle.attach(UserDao::class).Login(username)
+            handle.attach(UserDao::class).findByName(username)
         }
 
         if (user == null) {
             return null
         }
 
-        return if (PasswordUtils.VerifyPassword(password, user.passwordHash)) {
+        return if (PasswordUtils.verifyPassword(password, user.passwordHash!!)) {
             user
         } else {
             null
@@ -34,7 +34,7 @@ class UserService(private val jdbi: Jdbi) : IUserService {
 
     override fun Register(user: User) {
         jdbi.withHandle<Unit, Exception> { handle ->
-            handle.attach(UserDao::class).CreateUser(user)
+            handle.attach(UserDao::class).createUser(user)
         }
     }
 }

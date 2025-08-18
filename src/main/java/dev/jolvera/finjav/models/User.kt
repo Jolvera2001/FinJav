@@ -10,4 +10,14 @@ data class User(
     val name: String,
     val email: String,
     val passwordHash: String?
-)
+) {
+    fun withoutPasswordHash(): User {
+        return this.copy(
+            id = id,
+            dateCreated = dateCreated,
+            dateUpdated = dateUpdated,
+            name = name,
+            email = email
+        )
+    }
+}

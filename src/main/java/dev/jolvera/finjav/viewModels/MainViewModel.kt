@@ -1,21 +1,12 @@
-package dev.jolvera.finjav.viewModels;
+package dev.jolvera.finjav.viewModels
 
-import dev.jolvera.finjav.models.User;
-import dev.jolvera.finjav.services.interfaces.UserService;
-import jakarta.inject.Inject;
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleObjectProperty;
+import dev.jolvera.finjav.models.User
+import dev.jolvera.finjav.services.interfaces.IUserService
+import javafx.beans.property.ObjectProperty
+import javafx.beans.property.SimpleObjectProperty
 
-public class MainViewModel extends BaseViewModel {
-    private UserService userService;
+class MainViewModel(private val userService: IUserService): BaseViewModel() {
+    private val activeUser = SimpleObjectProperty<User>()
 
-    private ObjectProperty<User> activeUser = new SimpleObjectProperty<>(null);
-
-    public ObjectProperty<User> activeUserProperty() { return activeUser; }
-
-    @Inject
-    public MainViewModel(UserService userService) {
-        this.userService = userService;
-    }
-
+    fun activeUserProperty(): ObjectProperty<User> = activeUser
 }

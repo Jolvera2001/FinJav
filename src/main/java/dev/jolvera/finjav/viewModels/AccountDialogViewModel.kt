@@ -1,108 +1,108 @@
-package dev.jolvera.finjav.viewModels;
+package dev.jolvera.finjav.viewModels
 
-import dev.jolvera.finjav.models.User;
-import dev.jolvera.finjav.services.interfaces.UserService;
-import dev.jolvera.finjav.utils.PasswordUtils;
-import jakarta.inject.Inject;
-import javafx.beans.InvalidationListener;
-import javafx.beans.property.*;
+import dev.jolvera.finjav.models.User
+import dev.jolvera.finjav.services.interfaces.IUserService
+import dev.jolvera.finjav.utils.PasswordUtils
+import javafx.beans.InvalidationListener
+import javafx.beans.property.BooleanProperty
+import javafx.beans.property.Property
+import javafx.beans.property.SimpleBooleanProperty
+import javafx.beans.property.SimpleObjectProperty
+import javafx.beans.property.SimpleStringProperty
+import javafx.beans.property.StringProperty
+import java.time.LocalDate
+import java.util.UUID
 
-import java.time.LocalDate;
-import java.util.UUID;
+class AccountDialogViewModel(private val userService: IUserService) : BaseViewModel() {
+    private val loginName = SimpleStringProperty("")
+    private val loginPassword = SimpleStringProperty("")
 
-public class AccountDialogViewModel extends BaseViewModel {
-    private final UserService userService;
+    private val registerName = SimpleStringProperty("")
+    private val registerEmail = SimpleStringProperty("")
+    private val registerPassword = SimpleStringProperty("")
 
-    // login
-    private final StringProperty loginUsername = new SimpleStringProperty("");
-    private final StringProperty loginPassword = new SimpleStringProperty("");
+    private val hasError = SimpleBooleanProperty(false)
+    private val returnedUser = SimpleObjectProperty<User>()
 
-    // register
-    private final StringProperty registerUsername = new SimpleStringProperty("");
-    private final StringProperty registerEmail = new SimpleStringProperty("");
-    private final StringProperty registerPassword = new SimpleStringProperty("");
+    fun loginNameProperty(): StringProperty = loginName
+    fun loginPasswordProperty(): StringProperty = loginPassword
 
-    private final BooleanProperty hasError = new SimpleBooleanProperty(false);
-    private final Property<User> userProperty = new SimpleObjectProperty<>();
+    fun registerNameProperty(): StringProperty = registerName
+    fun registerEmailProperty(): StringProperty = registerEmail
+    fun registerPasswordProperty(): StringProperty = registerPassword
 
-    public StringProperty loginUsernameProperty() { return loginUsername; }
-    public StringProperty loginPasswordProperty() { return loginPassword; }
+    fun hasErrorProperty(): BooleanProperty = hasError
+    fun returnedUserProperty(): Property<User> = returnedUser
 
-    public StringProperty registerUsernameProperty() { return registerUsername; }
-    public StringProperty registerEmailProperty() { return registerEmail; }
-    public StringProperty registerPasswordProperty() { return registerPassword; }
-
-    public BooleanProperty hasErrorProperty() { return hasError; }
-    public Property<User> userProperty() { return userProperty; }
-
-    @Inject
-    public AccountDialogViewModel(UserService userService) {
-        this.userService = userService;
-        setupErrorClearing();
-    }
-
-    private void setupErrorClearing() {
-        InvalidationListener clearErrors = obs -> clearError();
-        loginUsername.addListener(clearErrors);
-        loginPassword.addListener(clearErrors);
-        registerUsername.addListener(clearErrors);
-        registerEmail.addListener(clearErrors);
-        registerPassword.addListener(clearErrors);
-    }
-
-    private void clearError() {
-        errorMessage.set("");
-        hasError.set(false);
-    }
-
-    private void showError(String message) {
-        errorMessage.set(message);
-        hasError.set(true);
-    }
-
-    public void attemptLogin() {
-        if (loginUsername.get() == null || loginPassword.get() == null) {
-            showError("One or more login fields are empty");
+    fun attemptLogin() {
+        if (loginName.get() == null || loginPassword.get() == null) {
+            showError("One or more login fields are empty")
             return;
         }
 
         executeAsync(
-                () -> userService.Login(loginUsername.get(), loginPassword.get()),
-                user -> {
-                    if (user == null) {
-                        showError("Login failed");
-                    } else {
-                        userProperty.setValue(user);
-                    }
+            backgroundWork = {
+                userService.Login(
+                    loginName.get(),
+                    loginPassword.get()
+                )
+            },
+            uiUpdate = { user ->
+                if (user == null) {
+                    showError("User not found")
+                } else {
+                    returnedUser.set(user)
                 }
-        );
+            }
+        )
     }
 
-    public void attemptRegister() {
-        if (registerUsername.get() == null || registerEmail.get() == null || registerPassword.get() == null) {
-            showError("One or more register fields are empty");
+    fun attemptRegister() {
+        if (registerName.get() == null || registerEmail.get() == null || registerPassword.get() == null) {
+            showError("One or more register fields are empty")
         }
 
         executeAsync(
-                () -> {
-                    var user = new User(
-                            UUID.randomUUID(),
-                            LocalDate.now(),
-                            LocalDate.now(),
-                            registerUsername.get(),
-                            registerEmail.get(),
-                            PasswordUtils.HashPassword(registerPassword.get())
-                    );
-                    userService.Register(user);
-                    return userService.FindById(user.getId());
-                },
-                user -> {
-                    if (user.isEmpty()) {
-                        showError("Register failed");
-                    } else {
-                        userProperty.setValue(user.get());
-                    }
+            backgroundWork = {
+                val newUser = User(
+                    UUID.randomUUID(),
+                    LocalDate.now(),
+                    LocalDate.now(),
+                    registerName.get(),
+                    registerEmail.get(),
+                    PasswordUtils.hashPassword(registerPassword.get()),
+                )
+                userService.Register(newUser)
+                userService.FindById(newUser.id!!)
+            },
+            uiUpdate = { user ->
+                if (user == null) {
+                    showError("Error with registration")
+                } else {
+                    returnedUser.set(user)
                 }
-        );
+            }
+        )
     }
+
+    private fun setupErrorClearing() {
+        val clearErrors = InvalidationListener { clearError() }
+        loginName.addListener(clearErrors)
+        loginPassword.addListener(clearErrors)
+        registerName.addListener(clearErrors)
+        registerEmail.addListener(clearErrors)
+        registerPassword.addListener(clearErrors)
+    }
+
+    private fun clearError() {
+        errorMessage.set("")
+        hasError.set(false)
+    }
+
+    private fun showError(message: String) {
+        errorMessage.set(message)
+        hasError.set(true)
+    }
+
+
 }

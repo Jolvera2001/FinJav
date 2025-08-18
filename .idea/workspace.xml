@@ -4,10 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ee34415-2bf3-4076-9fdc-abea22d4f830" name="Changes" comment="yeah kotlin">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/viewModels/BaseViewModel.kt" afterDir="false" />
+    <list default="true" id="3ee34415-2bf3-4076-9fdc-abea22d4f830" name="Changes" comment="we don't want that kind of usage">
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/controllers/AccountDialogController.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/controllers/MainPageController.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/daos/Daos.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/utils/PasswordUtils.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/viewModels/AccountDialogViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/viewModels/MainViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/FinJavKoinModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/FinJavKoinModule.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/FinJavModule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/FinJavModule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/controllers/AccountDialogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/controllers/AccountDialogController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/controllers/MainPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/controllers/MainPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/daos/RecurrenceDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/daos/UserDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/models/Recurrence.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/models/Recurrence.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/models/Recurrence.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/models/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/models/User.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/models/User.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/services/DbContext.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/services/UserService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/services/UserService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/services/UserServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/services/interfaces/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/services/interfaces/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/utils/PasswordUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/viewModels/AccountDialogViewModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/viewModels/BaseViewModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/viewModels/BaseViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/viewModels/BaseViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/viewModels/MainViewModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dev/jolvera/finjav/account-dialog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dev/jolvera/finjav/account-dialog.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +70,7 @@
         <option value="Class" />
         <option value="Kotlin Data Class" />
         <option value="Kotlin Interface" />
+        <option value="Kotlin File" />
         <option value="Kotlin Class" />
       </list>
     </option>
@@ -157,7 +183,7 @@
       <workItem from="1755301071895" duration="19997000" />
       <workItem from="1755388630340" duration="5512000" />
       <workItem from="1755455619697" duration="17548000" />
-      <workItem from="1755537501270" duration="537000" />
+      <workItem from="1755537501270" duration="5126000" />
     </task>
     <task id="LOCAL-00001" summary="I'm so tired">
       <option name="closed" value="true" />
@@ -327,7 +353,23 @@
       <option name="project" value="LOCAL" />
       <updated>1755481087302</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="autoclosable is a thing">
+      <option name="closed" value="true" />
+      <created>1755538107822</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1755538107822</updated>
+    </task>
+    <task id="LOCAL-00023" summary="we don't want that kind of usage">
+      <option name="closed" value="true" />
+      <created>1755538243864</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1755538243864</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -355,7 +397,9 @@
     <MESSAGE value="More kotlin now because I hate myself" />
     <MESSAGE value="slowly adding kotlin stuff" />
     <MESSAGE value="yeah kotlin" />
-    <option name="LAST_COMMIT_MESSAGE" value="yeah kotlin" />
+    <MESSAGE value="autoclosable is a thing" />
+    <MESSAGE value="we don't want that kind of usage" />
+    <option name="LAST_COMMIT_MESSAGE" value="we don't want that kind of usage" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

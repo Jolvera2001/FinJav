@@ -44,10 +44,10 @@ public class AccountDialogController {
     }
 
     private void setupBindings() {
-        LoginUsernameInput.textProperty().bindBidirectional(viewModel.loginUsernameProperty());
+        LoginUsernameInput.textProperty().bindBidirectional(viewModel.loginNameProperty());
         LoginPasswordInput.textProperty().bindBidirectional(viewModel.loginPasswordProperty());
 
-        RegisterUsernameInput.textProperty().bindBidirectional(viewModel.registerUsernameProperty());
+        RegisterUsernameInput.textProperty().bindBidirectional(viewModel.registerNameProperty());
         RegisterEmailInput.textProperty().bindBidirectional(viewModel.registerEmailProperty());
         RegisterPasswordInput.textProperty().bindBidirectional(viewModel.registerPasswordProperty());
 

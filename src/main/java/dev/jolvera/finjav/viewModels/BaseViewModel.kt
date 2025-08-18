@@ -18,7 +18,7 @@ abstract class BaseViewModel {
     protected val scope = CoroutineScope(Dispatchers.JavaFx + SupervisorJob())
 
     fun IsLoadingProperty(): BooleanProperty = isLoading
-    fun IsErrorProperty(): StringProperty = errorMessage
+    fun ErrorProperty(): StringProperty = errorMessage
 
     protected fun <T> executeAsync(
         backgroundWork: suspend () -> T,

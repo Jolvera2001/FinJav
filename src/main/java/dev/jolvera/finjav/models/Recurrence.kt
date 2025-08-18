@@ -6,9 +6,11 @@ import java.util.UUID
 data class Recurrence(
     val id: UUID?,
     val userId: UUID?,
+    val dateCreated: LocalDate,
+    val dateModified: LocalDate,
     val startDate: LocalDate,
-    val endDate: LocalDate,
     val name: String,
+    val amount: Double,
     val isIncome: Boolean,
-    val recurrenceDate: LocalDate,
+    val recurringDate: LocalDate,
 )

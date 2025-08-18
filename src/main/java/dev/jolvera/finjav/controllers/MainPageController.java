@@ -2,7 +2,6 @@ package dev.jolvera.finjav.controllers;
 
 import dev.jolvera.finjav.FinJavComponent;
 import dev.jolvera.finjav.HelloApplication;
-import dev.jolvera.finjav.models.User;
 import dev.jolvera.finjav.viewModels.MainViewModel;
 import jakarta.inject.Inject;
 import javafx.application.Platform;
