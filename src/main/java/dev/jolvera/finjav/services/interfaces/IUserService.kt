@@ -5,6 +5,6 @@ import java.util.UUID
 
 interface IUserService {
     fun FindById(id: UUID) : User?
-    fun Login(username: String, password: String) : User?
+    fun Login(name: String, password: String) : User?
     fun Register(user: User)
 }

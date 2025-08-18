@@ -8,12 +8,17 @@ import dev.jolvera.finjav.viewModels.AccountDialogViewModel
 import dev.jolvera.finjav.viewModels.MainViewModel
 import org.jdbi.v3.core.Jdbi
 import org.jdbi.v3.core.kotlin.KotlinPlugin
+import org.jdbi.v3.core.statement.SqlStatements
 import org.jdbi.v3.sqlobject.kotlin.KotlinSqlObjectPlugin
 import org.koin.dsl.module
+import org.sqlite.SQLiteDataSource
 
 val FinJavKoinModule = module {
     single<Jdbi> {
-        val jdbi = Jdbi.create("jdbc:sqlite:finjav.sqlite")
+        val ds = SQLiteDataSource()
+        ds.url = "jdbc:sqlite:finjav.sqlite"
+        ds.setBusyTimeout(30000)
+        val jdbi = Jdbi.create(ds)
             .installPlugin(KotlinPlugin())
             .installPlugin(KotlinSqlObjectPlugin())
 
@@ -37,6 +42,7 @@ val FinJavKoinModule = module {
                 date_created DATETIME NOT NULL,
                 date_modified DATETIME NOT NULL,
                 name TEXT NOT NULL,
+                amount REAL NOT NULL,
                 is_income BOOLEAN NOT NULL,
                 recurring_date DATETIME NOT NULL,
                 FOREIGN KEY (user_id) REFERENCES users(id)

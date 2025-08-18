@@ -4,24 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ee34415-2bf3-4076-9fdc-abea22d4f830" name="Changes" comment="refactor mostly done">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/FinJavApp.kt" afterDir="false" />
+    <list default="true" id="3ee34415-2bf3-4076-9fdc-abea22d4f830" name="Changes" comment="yay">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/FinJavComponent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/FinJavKoinModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/FinJavKoinModule.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/FinJavModule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/HelloApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/Launcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/controllers/AccountDialogController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/controllers/AccountDialogController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/controllers/AccountDialogController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/controllers/MainPageController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/controllers/MainPageController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/controllers/MainPageController.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/daos/Daos.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/daos/Daos.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/models/dtos/RecurrenceDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/models/dtos/UserDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/services/interfaces/UserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/viewModels/MainViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/viewModels/MainViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/services/UserService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/services/UserService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/services/interfaces/IUserService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/services/interfaces/IUserService.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -104,7 +95,7 @@
   "keyToString": {
     "Gradle.Build FinJav.executor": "Run",
     "Gradle.Download Sources.executor": "Run",
-    "Gradle.FinJav [:dev.jolvera.finjav.Launcher.main()].executor": "Run",
+    "Gradle.FinJav [:dev.jolvera.finjav.Launcher.main()].executor": "Debug",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
@@ -173,7 +164,7 @@
       <workItem from="1755301071895" duration="19997000" />
       <workItem from="1755388630340" duration="5512000" />
       <workItem from="1755455619697" duration="17548000" />
-      <workItem from="1755537501270" duration="10701000" />
+      <workItem from="1755537501270" duration="15061000" />
     </task>
     <task id="LOCAL-00001" summary="I'm so tired">
       <option name="closed" value="true" />
@@ -375,14 +366,21 @@
       <option name="project" value="LOCAL" />
       <updated>1755543205226</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="yay">
+      <option name="closed" value="true" />
+      <created>1755553609231</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1755553609231</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="I'm so tired" />
     <MESSAGE value="added interface and service" />
     <MESSAGE value="setting commands up for tables" />
     <MESSAGE value="updated gitignore and added table creation" />
@@ -407,26 +405,34 @@
     <MESSAGE value="we don't want that kind of usage" />
     <MESSAGE value="more refactoring" />
     <MESSAGE value="refactor mostly done" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor mostly done" />
+    <MESSAGE value="yay" />
+    <option name="LAST_COMMIT_MESSAGE" value="yay" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/controllers/MainPageController.kt</url>
-          <line>70</line>
-          <option name="timeStamp" value="4" />
+          <url>file://$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/viewModels/AccountDialogViewModel.kt</url>
+          <line>60</line>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/controllers/MainPageController.kt</url>
-          <line>45</line>
-          <properties>
-            <option name="lambda-ordinal" value="-1" />
-          </properties>
-          <option name="timeStamp" value="9" />
+          <url>file://$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/viewModels/AccountDialogViewModel.kt</url>
+          <line>75</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jdbi/jdbi3-core/3.49.5/80012047b5843598280ea623af5419649ba9174c/jdbi3-core-3.49.5-sources.jar!/org/jdbi/v3/core/Handle.java</url>
+          <line>250</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <inline-watch fileUrl="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jdbi/jdbi3-core/3.49.5/80012047b5843598280ea623af5419649ba9174c/jdbi3-core-3.49.5-sources.jar!/org/jdbi/v3/core/Handle.java" line="250">
+        <watch expression="throwableSuppressor.throwables" language="JAVA" />
+      </inline-watch>
+    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

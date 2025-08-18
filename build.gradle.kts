@@ -5,7 +5,6 @@ plugins {
     id("org.javamodularity.moduleplugin") version "1.8.15"
     id("org.openjfx.javafxplugin") version "0.0.13"
     id("org.beryx.jlink") version "2.25.0"
-    id("io.freefair.lombok") version "8.14"
 }
 
 kotlin {
@@ -73,8 +72,6 @@ dependencies {
     implementation("org.xerial:sqlite-jdbc:3.47.1.0")
 
     // DI
-    implementation("com.google.dagger:dagger:2.57")
-    annotationProcessor("com.google.dagger:dagger-compiler:2.57")
     implementation("io.insert-koin:koin-core:4.1.0")
 
     // testing

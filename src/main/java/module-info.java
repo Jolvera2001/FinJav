@@ -8,13 +8,9 @@ module dev.jolvera.finjav {
     requires net.synedra.validatorfx;
     requires org.kordamp.ikonli.javafx;
     requires eu.hansolo.tilesfx;
-    requires dagger;
-    requires javax.inject;
     requires java.sql;
     requires org.jdbi.v3.core;
     requires org.jdbi.v3.sqlobject;
-    requires jakarta.inject;
-    requires static lombok;
     requires org.xerial.sqlitejdbc;
     requires jakarta.validation;
     requires jbcrypt;

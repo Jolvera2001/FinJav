@@ -68,7 +68,7 @@ class MainPageController: KoinComponent {
     private fun handleOpenAccountDialog() {
         try {
             val loader = FXMLLoader(FinJavApp::class.java.getResource("account-dialog.fxml"))
-            val dialogController: AccountDialogController by inject()
+            val dialogController = get<AccountDialogController>()
             loader.setController(dialogController)
             val dialogPane = loader.load() as DialogPane
 

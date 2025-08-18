@@ -17,11 +17,11 @@ interface UserDao {
 
     @SqlQuery("SELECT * FROM users WHERE id = :id")
     @RegisterBeanMapper(User::class)
-    fun findById(id: UUID): User
+    fun findById(id: UUID): User?
 
     @SqlQuery("SELECT * FROM users WHERE name = :name")
     @RegisterBeanMapper(User::class)
-    fun findByName(name: String): User
+    fun findByName(name: String): User?
 
     @SqlUpdate("INSERT INTO users (id, date_created, date_modified, name, email, password_hash) VALUES (:id, :dateCreated, :dateModified, :name, :email, :passwordHash)")
     fun createUser(@BindBean user: User)
@@ -36,13 +36,13 @@ interface UserDao {
 interface RecurrenceDao {
     @SqlQuery("SELECT * FROM recurrences WHERE id = :id")
     @RegisterBeanMapper(Recurrence::class)
-    fun findById(@Bind("id") id: UUID): Recurrence
+    fun findById(@Bind("id") id: UUID): Recurrence?
 
     @SqlQuery("SELECT * FROM recurrences WHERE user_id = :id")
     @RegisterBeanMapper(Recurrence::class)
-    fun findAllFromUser(@Bind("id") id: UUID): MutableList<Recurrence>
+    fun findAllFromUser(@Bind("id") id: UUID): List<Recurrence>
 
-    @SqlUpdate("INSERT INTO recurrences (id, date_created, date_Modified, name, amount, is_income, recurring_date) VALUES (:id, :name, :amount, :isIncome, :recurringDate)")
+    @SqlUpdate("INSERT INTO recurrences (id, user_id, date_created, date_modified, name, amount, is_income, recurring_date) VALUES (:id, :userId, :dateCreated, :dateModified, :name, :amount, :isIncome, :recurringDate)")
     fun createRecurrence(@BindBean recurrence: Recurrence)
 
     @SqlUpdate("UPDATE recurrences SET  date_modified = :dateModified, name = :name, amount = :amount, is_income = :isIncome, recurring_date = :recurringDate WHERE id = :id")
