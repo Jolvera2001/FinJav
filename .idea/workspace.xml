@@ -4,9 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ee34415-2bf3-4076-9fdc-abea22d4f830" name="Changes" comment="More kotlin now because I hate myself">
+    <list default="true" id="3ee34415-2bf3-4076-9fdc-abea22d4f830" name="Changes" comment="slowly adding kotlin stuff">
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/FinJavKoinModule.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/models/User.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/services/UserService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/services/interfaces/IUserService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/models/Recurrence.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/models/Recurrence.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/services/interfaces/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/services/interfaces/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +49,9 @@
         <option value="Interface" />
         <option value="FxmlFile" />
         <option value="Class" />
+        <option value="Kotlin Data Class" />
+        <option value="Kotlin Interface" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -152,7 +162,7 @@
       <workItem from="1755269298618" duration="6896000" />
       <workItem from="1755301071895" duration="19997000" />
       <workItem from="1755388630340" duration="5512000" />
-      <workItem from="1755455619697" duration="13951000" />
+      <workItem from="1755455619697" duration="15713000" />
     </task>
     <task id="LOCAL-00001" summary="I'm so tired">
       <option name="closed" value="true" />
@@ -306,7 +316,15 @@
       <option name="project" value="LOCAL" />
       <updated>1755477749003</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="slowly adding kotlin stuff">
+      <option name="closed" value="true" />
+      <created>1755479322150</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1755479322150</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -332,7 +350,8 @@
     <MESSAGE value="janky result catching but it works" />
     <MESSAGE value="i didn't need them as singletons wtf" />
     <MESSAGE value="More kotlin now because I hate myself" />
-    <option name="LAST_COMMIT_MESSAGE" value="More kotlin now because I hate myself" />
+    <MESSAGE value="slowly adding kotlin stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="slowly adding kotlin stuff" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
