@@ -1,10 +1,15 @@
 plugins {
     java
     application
+    kotlin("jvm") version "2.1.10"
     id("org.javamodularity.moduleplugin") version "1.8.15"
     id("org.openjfx.javafxplugin") version "0.0.13"
     id("org.beryx.jlink") version "2.25.0"
     id("io.freefair.lombok") version "8.14"
+}
+
+kotlin {
+    jvmToolchain(21)
 }
 
 group = "dev.jolvera"
@@ -58,6 +63,8 @@ dependencies {
     // DB
     implementation(platform("org.jdbi:jdbi3-bom:3.49.5"))
     implementation("org.jdbi:jdbi3-core")
+    // implementation("org.jdbi:jdbi3-kotlin:3.49.5")
+    // implementation("org.jdbi:jdbi3-kotlin-sqlobject:3.49.5")
     implementation("org.jdbi:jdbi3-sqlobject")
     implementation("org.jdbi:jdbi3-sqlite")
     implementation("org.xerial:sqlite-jdbc:3.47.1.0")
@@ -65,6 +72,7 @@ dependencies {
     // DI
     implementation("com.google.dagger:dagger:2.57")
     annotationProcessor("com.google.dagger:dagger-compiler:2.57")
+    // runtimeOnly("io.insert-koin:koin-core:4.1.0")
 
     // testing
     testImplementation("org.jdbi:jdbi3-testing:3.49.5")

@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ee34415-2bf3-4076-9fdc-abea22d4f830" name="Changes" comment="i didn't need them as singletons wtf">
+    <list default="true" id="3ee34415-2bf3-4076-9fdc-abea22d4f830" name="Changes" comment="More kotlin now because I hate myself">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +152,7 @@
       <workItem from="1755269298618" duration="6896000" />
       <workItem from="1755301071895" duration="19997000" />
       <workItem from="1755388630340" duration="5512000" />
-      <workItem from="1755455619697" duration="12865000" />
+      <workItem from="1755455619697" duration="13951000" />
     </task>
     <task id="LOCAL-00001" summary="I'm so tired">
       <option name="closed" value="true" />
@@ -297,7 +298,15 @@
       <option name="project" value="LOCAL" />
       <updated>1755472210935</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="More kotlin now because I hate myself">
+      <option name="closed" value="true" />
+      <created>1755477749003</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1755477749003</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -322,7 +331,8 @@
     <MESSAGE value="login and registration works" />
     <MESSAGE value="janky result catching but it works" />
     <MESSAGE value="i didn't need them as singletons wtf" />
-    <option name="LAST_COMMIT_MESSAGE" value="i didn't need them as singletons wtf" />
+    <MESSAGE value="More kotlin now because I hate myself" />
+    <option name="LAST_COMMIT_MESSAGE" value="More kotlin now because I hate myself" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
