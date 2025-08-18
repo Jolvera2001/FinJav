@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ee34415-2bf3-4076-9fdc-abea22d4f830" name="Changes" comment="janky result catching but it works">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="3ee34415-2bf3-4076-9fdc-abea22d4f830" name="Changes" comment="i didn't need them as singletons wtf">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/controllers/MainPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/controllers/MainPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/viewModels/AccountDialogViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/viewModels/AccountDialogViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/viewModels/MainViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/viewModels/MainViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/dev/jolvera/finjav/main-page-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dev/jolvera/finjav/main-page-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +151,7 @@
       <workItem from="1755269298618" duration="6896000" />
       <workItem from="1755301071895" duration="19997000" />
       <workItem from="1755388630340" duration="5512000" />
-      <workItem from="1755455619697" duration="11067000" />
+      <workItem from="1755455619697" duration="12865000" />
     </task>
     <task id="LOCAL-00001" summary="I'm so tired">
       <option name="closed" value="true" />
@@ -294,7 +289,15 @@
       <option name="project" value="LOCAL" />
       <updated>1755469938271</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="i didn't need them as singletons wtf">
+      <option name="closed" value="true" />
+      <created>1755472210935</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1755472210935</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -318,7 +321,8 @@
     <MESSAGE value="debugging oml" />
     <MESSAGE value="login and registration works" />
     <MESSAGE value="janky result catching but it works" />
-    <option name="LAST_COMMIT_MESSAGE" value="janky result catching but it works" />
+    <MESSAGE value="i didn't need them as singletons wtf" />
+    <option name="LAST_COMMIT_MESSAGE" value="i didn't need them as singletons wtf" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
