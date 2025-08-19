@@ -1,5 +1,6 @@
 package dev.jolvera.finjav.models
 
+import java.math.BigDecimal
 import java.time.LocalDate
 import java.util.UUID
 
@@ -10,7 +11,7 @@ data class Recurrence(
     val dateModified: LocalDate,
     val startDate: LocalDate,
     val name: String,
-    val amount: Double,
+    val amount: BigDecimal,
     val isIncome: Boolean,
     val recurringDate: LocalDate,
 )

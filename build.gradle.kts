@@ -45,10 +45,6 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-javafx:1.10.2")
 
-    // Lombok
-    compileOnly("org.projectlombok:lombok:1.18.38")
-    annotationProcessor("org.projectlombok:lombok:1.18.38")
-
     // javafx related
     implementation("org.controlsfx:controlsfx:11.2.1")
     implementation("net.synedra:validatorfx:0.6.1") {
@@ -64,20 +60,22 @@ dependencies {
     implementation("org.mindrot:jbcrypt:0.4")
 
     // DB
-    implementation(platform("org.jdbi:jdbi3-bom:3.49.5"))
-    implementation("org.jdbi:jdbi3-core")
-    implementation("org.jdbi:jdbi3-sqlite")
-    implementation("org.jdbi:jdbi3-kotlin")
-    implementation("org.jdbi:jdbi3-kotlin-sqlobject")
+    implementation("org.jetbrains.exposed:exposed-core:0.61.0")
+    implementation("org.jetbrains.exposed:exposed-jdbc:0.61.0")
+    implementation("org.jetbrains.exposed:exposed-dao:0.61.0")
+    implementation("org.jetbrains.exposed:exposed-java-time:0.61.0")
     implementation("org.xerial:sqlite-jdbc:3.47.1.0")
 
     // DI
     implementation("io.insert-koin:koin-core:4.1.0")
 
     // testing
+    testImplementation("io.kotest:kotest-assertions-core-jvm:6.0.0")
+    testImplementation("io.kotest:kotest-runner-junit5-jvm:6.0.0.M17")
+    testImplementation("io.kotest:kotest-property-jvm:6.0.0.M17")
+    testImplementation("io.mockk:mockk:1.14.3")
     testImplementation("org.jdbi:jdbi3-testing:3.49.5")
-    testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
+
 }
 
 tasks.withType<Test> {

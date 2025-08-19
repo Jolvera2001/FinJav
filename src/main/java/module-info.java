@@ -9,8 +9,6 @@ module dev.jolvera.finjav {
     requires org.kordamp.ikonli.javafx;
     requires eu.hansolo.tilesfx;
     requires java.sql;
-    requires org.jdbi.v3.core;
-    requires org.jdbi.v3.sqlobject;
     requires org.xerial.sqlitejdbc;
     requires jakarta.validation;
     requires jbcrypt;

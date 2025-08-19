@@ -6,16 +6,16 @@ import java.util.UUID
 data class User(
     val id: UUID?,
     val dateCreated: LocalDate,
-    val dateUpdated: LocalDate,
+    val dateModified: LocalDate,
     val name: String,
     val email: String,
-    val passwordHash: String?
+    val passwordHash: String
 ) {
     fun withoutPasswordHash(): User {
         return this.copy(
             id = id,
             dateCreated = dateCreated,
-            dateUpdated = dateUpdated,
+            dateModified = dateModified,
             name = name,
             email = email
         )

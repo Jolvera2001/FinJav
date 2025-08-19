@@ -4,16 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ee34415-2bf3-4076-9fdc-abea22d4f830" name="Changes" comment="yay">
+    <list default="true" id="3ee34415-2bf3-4076-9fdc-abea22d4f830" name="Changes" comment="wow">
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/tables/Recurrences.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/tables/Users.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/FinJavKoinModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/FinJavKoinModule.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/controllers/MainPageController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/controllers/MainPageController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/daos/Daos.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/daos/Daos.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/daos/Daos.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/models/Recurrence.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/models/Recurrence.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/models/User.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/models/User.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/services/UserService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/services/UserService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/services/interfaces/IUserService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/services/interfaces/IUserService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +54,7 @@
         <option value="Kotlin File" />
         <option value="Class" />
         <option value="Kotlin Class" />
+        <option value="Kotlin Object" />
       </list>
     </option>
   </component>
@@ -164,7 +166,8 @@
       <workItem from="1755301071895" duration="19997000" />
       <workItem from="1755388630340" duration="5512000" />
       <workItem from="1755455619697" duration="17548000" />
-      <workItem from="1755537501270" duration="15061000" />
+      <workItem from="1755537501270" duration="15095000" />
+      <workItem from="1755571663529" duration="4450000" />
     </task>
     <task id="LOCAL-00001" summary="I'm so tired">
       <option name="closed" value="true" />
@@ -374,14 +377,21 @@
       <option name="project" value="LOCAL" />
       <updated>1755553609231</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="wow">
+      <option name="closed" value="true" />
+      <created>1755560299065</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1755560299065</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added interface and service" />
     <MESSAGE value="setting commands up for tables" />
     <MESSAGE value="updated gitignore and added table creation" />
     <MESSAGE value="making dialog stuff idk" />
@@ -406,25 +416,26 @@
     <MESSAGE value="more refactoring" />
     <MESSAGE value="refactor mostly done" />
     <MESSAGE value="yay" />
-    <option name="LAST_COMMIT_MESSAGE" value="yay" />
+    <MESSAGE value="wow" />
+    <option name="LAST_COMMIT_MESSAGE" value="wow" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/viewModels/AccountDialogViewModel.kt</url>
-          <line>60</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/viewModels/AccountDialogViewModel.kt</url>
-          <line>75</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jdbi/jdbi3-core/3.49.5/80012047b5843598280ea623af5419649ba9174c/jdbi3-core-3.49.5-sources.jar!/org/jdbi/v3/core/Handle.java</url>
           <line>250</line>
           <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/viewModels/AccountDialogViewModel.kt</url>
+          <line>75</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/viewModels/AccountDialogViewModel.kt</url>
+          <line>44</line>
+          <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
