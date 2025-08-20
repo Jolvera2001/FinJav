@@ -11,8 +11,8 @@ import java.util.UUID
 object Users: UUIDTable("users") {
     val dateCreated = date("date_created")
     val dateModified = date("date_modified")
-    val name = varchar("name", 50)
-    val email = varchar("email", 50)
+    val name = varchar("name", 50).uniqueIndex()
+    val email = varchar("email", 50).uniqueIndex()
     val passwordHash = varchar("password_hash", 64)
 }
 

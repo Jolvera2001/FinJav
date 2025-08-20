@@ -12,7 +12,7 @@ object Recurrences: UUIDTable("recurrences") {
     val user = reference("user_id", Users.id)
     val dateCreated = date("date_created")
     val dateModified = date("date_modified")
-    val name = varchar("name", 50)
+    val name = varchar("name", 50).uniqueIndex()
     val amount = decimal("amount", 12, 2)
     val isIncome = bool("is_income")
     val recurringDate = datetime("recurring_date")
