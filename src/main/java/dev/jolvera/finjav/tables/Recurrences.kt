@@ -22,6 +22,7 @@ class RecurrenceEntity(id: EntityID<UUID>) : UUIDEntity(id) {
     companion object : UUIDEntityClass<RecurrenceEntity>(Recurrences)
 
     var user by UserEntity referencedOn Recurrences.user
+
     var dateCreated by Recurrences.dateCreated
     var dateModified by Recurrences.dateModified
     var name by Recurrences.name

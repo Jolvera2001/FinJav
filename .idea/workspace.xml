@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ee34415-2bf3-4076-9fdc-abea22d4f830" name="Changes" comment="gotta use exposed now and it AINT WORKING">
+    <list default="true" id="3ee34415-2bf3-4076-9fdc-abea22d4f830" name="Changes" comment="I think I did the relationship right">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/tables/Users.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/tables/Users.kt" afterDir="false" />
     </list>
@@ -160,7 +160,7 @@
       <workItem from="1755455619697" duration="17548000" />
       <workItem from="1755537501270" duration="15095000" />
       <workItem from="1755571663529" duration="5120000" />
-      <workItem from="1755656810178" duration="493000" />
+      <workItem from="1755656810178" duration="1473000" />
     </task>
     <task id="LOCAL-00001" summary="I'm so tired">
       <option name="closed" value="true" />
@@ -386,14 +386,21 @@
       <option name="project" value="LOCAL" />
       <updated>1755576450695</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="I think I did the relationship right">
+      <option name="closed" value="true" />
+      <created>1755657539689</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1755657539689</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="updated gitignore and added table creation" />
     <MESSAGE value="making dialog stuff idk" />
     <MESSAGE value="lombok is weird" />
     <MESSAGE value="learning more about CompletableFutures" />
@@ -418,7 +425,8 @@
     <MESSAGE value="yay" />
     <MESSAGE value="wow" />
     <MESSAGE value="gotta use exposed now and it AINT WORKING" />
-    <option name="LAST_COMMIT_MESSAGE" value="gotta use exposed now and it AINT WORKING" />
+    <MESSAGE value="I think I did the relationship right" />
+    <option name="LAST_COMMIT_MESSAGE" value="I think I did the relationship right" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
