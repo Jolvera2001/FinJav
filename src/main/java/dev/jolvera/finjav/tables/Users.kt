@@ -26,6 +26,8 @@ class UserEntity(id: EntityID<UUID>) : UUIDEntity(id) {
     var email by Users.email
     var passwordHash by Users.passwordHash
 
+    val recurrences by RecurrenceEntity referrersOn Recurrences.user orderBy Recurrences.name
+
     override fun toString() = "User(id=$id, dateCreated=$dateCreated, dateModified=$dateModified, name=$name, email=$email, passwordHash=$passwordHash)"
 
     fun toUser(): User {

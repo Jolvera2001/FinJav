@@ -9,6 +9,7 @@ import org.jetbrains.exposed.sql.javatime.datetime
 import java.util.UUID
 
 object Recurrences: UUIDTable("recurrences") {
+    val user = reference("user_id", Users.id)
     val dateCreated = date("date_created")
     val dateModified = date("date_modified")
     val name = varchar("name", 50)
@@ -20,6 +21,7 @@ object Recurrences: UUIDTable("recurrences") {
 class RecurrenceEntity(id: EntityID<UUID>) : UUIDEntity(id) {
     companion object : UUIDEntityClass<RecurrenceEntity>(Recurrences)
 
+    var user by UserEntity referencedOn Recurrences.user
     var dateCreated by Recurrences.dateCreated
     var dateModified by Recurrences.dateModified
     var name by Recurrences.name
