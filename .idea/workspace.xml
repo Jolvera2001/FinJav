@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ee34415-2bf3-4076-9fdc-abea22d4f830" name="Changes" comment="I think I did the relationship right">
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/dev/jolvera/finjav/serviceTests/UserServiceTests.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/dev/jolvera/finjav/testModules/DbTestModule.kt" afterDir="false" />
+    <list default="true" id="3ee34415-2bf3-4076-9fdc-abea22d4f830" name="Changes" comment="setup for tests and refining tables">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/models/User.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/models/User.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/services/UserService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/services/UserService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/tables/Users.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/tables/Users.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/dev/jolvera/finjav/serviceTests/UserServiceTests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/dev/jolvera/finjav/serviceTests/UserServiceTests.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/dev/jolvera/finjav/testModules/DbTestModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/dev/jolvera/finjav/testModules/DbTestModule.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,12 +26,20 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="FinJav" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="FinJav" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
               </path>
             </expand>
             <select />
@@ -91,6 +103,14 @@
     "Gradle.Build FinJav.executor": "Run",
     "Gradle.Download Sources.executor": "Run",
     "Gradle.FinJav [:dev.jolvera.finjav.Launcher.main()].executor": "Run",
+    "Gradle.FinJav [compileTestKotlin].executor": "Run",
+    "Gradle.FinJav [testClasses].executor": "Run",
+    "Gradle.UserServiceTests (1).executor": "Run",
+    "Gradle.UserServiceTests.executor": "Run",
+    "Kotest.UserServiceTests.executor": "Run",
+    "Kotest.UserServiceTests: should login user after registration (1).executor": "Run",
+    "Kotest.UserServiceTests: should login user after registration.executor": "Debug",
+    "Kotest.UserServiceTests: should register user.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
@@ -116,7 +136,7 @@
     ]
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Kotest.UserServiceTests">
     <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="dev.jolvera.finjav.Launcher" />
       <module name="FinJav.main" />
@@ -130,9 +150,141 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="FinJav [compileTestKotlin]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="compileTestKotlin" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="FinJav [testClasses]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="testClasses" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="UserServiceTests (1)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;dev.jolvera.finjav.serviceTests.UserServiceTests&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="UserServiceTests" type="ioKotest" factoryName="Kotest" defaultName="singleModule">
+      <module name="FinJav.test" />
+      <option name="jrePath" value="" />
+      <option name="jrePathEnabled" value="false" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" value="$MODULE_WORKING_DIR$" />
+      <option name="programParameters" value="" />
+      <option name="specName" value="dev.jolvera.finjav.serviceTests.UserServiceTests" />
+      <option name="testPath" value="" />
+      <option name="packageName" value="" />
+      <option name="vmparams" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceTests: should login user after registration (1)" type="ioKotest" factoryName="Kotest" temporary="true" defaultName="singleModule">
+      <module name="FinJav.test" />
+      <option name="jrePath" value="" />
+      <option name="jrePathEnabled" value="false" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" value="$MODULE_WORKING_DIR$" />
+      <option name="programParameters" value="" />
+      <option name="specName" value="dev.jolvera.finjav.serviceTests.UserServiceTests" />
+      <option name="testPath" value="should login user after registration" />
+      <option name="packageName" value="" />
+      <option name="vmparams" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceTests: should login user after registration" type="ioKotest" factoryName="Kotest" defaultName="singleModule">
+      <module name="FinJav.test" />
+      <option name="jrePath" value="" />
+      <option name="jrePathEnabled" value="false" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" value="$MODULE_WORKING_DIR$" />
+      <option name="programParameters" value="" />
+      <option name="specName" value="dev.jolvera.finjav.serviceTests.UserServiceTests" />
+      <option name="testPath" value="should login user after registration" />
+      <option name="packageName" value="" />
+      <option name="vmparams" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceTests: should register user" type="ioKotest" factoryName="Kotest" defaultName="singleModule">
+      <module name="FinJav.test" />
+      <option name="jrePath" value="" />
+      <option name="jrePathEnabled" value="false" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" value="$MODULE_WORKING_DIR$" />
+      <option name="programParameters" value="" />
+      <option name="specName" value="dev.jolvera.finjav.serviceTests.UserServiceTests" />
+      <option name="testPath" value="should register user" />
+      <option name="packageName" value="" />
+      <option name="vmparams" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Launcher" />
+        <item itemvalue="Gradle.UserServiceTests (1)" />
+        <item itemvalue="Kotest.UserServiceTests: should login user after registration (1)" />
+        <item itemvalue="Gradle.FinJav [compileTestKotlin]" />
+        <item itemvalue="Gradle.FinJav [testClasses]" />
+        <item itemvalue="Kotest.UserServiceTests: should register user" />
       </list>
     </recent_temporary>
   </component>
@@ -162,7 +314,7 @@
       <workItem from="1755537501270" duration="15095000" />
       <workItem from="1755571663529" duration="5120000" />
       <workItem from="1755656810178" duration="2323000" />
-      <workItem from="1755718523756" duration="790000" />
+      <workItem from="1755718523756" duration="5022000" />
     </task>
     <task id="LOCAL-00001" summary="I'm so tired">
       <option name="closed" value="true" />
@@ -404,14 +556,21 @@
       <option name="project" value="LOCAL" />
       <updated>1755658753565</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="setup for tests and refining tables">
+      <option name="closed" value="true" />
+      <created>1755719479896</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1755719479896</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="making dialog stuff idk" />
     <MESSAGE value="lombok is weird" />
     <MESSAGE value="learning more about CompletableFutures" />
     <MESSAGE value="implemented viewmodel for dialog I think" />
@@ -436,7 +595,8 @@
     <MESSAGE value="wow" />
     <MESSAGE value="gotta use exposed now and it AINT WORKING" />
     <MESSAGE value="I think I did the relationship right" />
-    <option name="LAST_COMMIT_MESSAGE" value="I think I did the relationship right" />
+    <MESSAGE value="setup for tests and refining tables" />
+    <option name="LAST_COMMIT_MESSAGE" value="setup for tests and refining tables" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -1,5 +1,7 @@
 package dev.jolvera.finjav.testModules
 
+import dev.jolvera.finjav.services.UserService
+import dev.jolvera.finjav.services.interfaces.IUserService
 import dev.jolvera.finjav.tables.Recurrences
 import dev.jolvera.finjav.tables.Users
 import org.jetbrains.exposed.sql.Database
@@ -9,10 +11,13 @@ import org.koin.dsl.module
 
 val SqliteMemTestModule = module {
     single<Database> {
-        Database.connect("jdbc:sqlite::memory:", driver = "org.sqlite.JDBC").also { db ->
-            transaction(db) {
+        val dbFile = "test_${System.currentTimeMillis()}.db"
+        val db = Database.connect("jdbc:sqlite:$dbFile", driver = "org.sqlite.JDBC")
+        transaction(db) {
                 SchemaUtils.create(Users, Recurrences)
-            }
         }
+        db
     }
+
+    factory<IUserService> { UserService(get()) }
 }
