@@ -10,16 +10,21 @@ import dev.jolvera.finjav.viewModels.AccountDialogViewModel
 import dev.jolvera.finjav.viewModels.MainViewModel
 import org.jetbrains.exposed.sql.Database
 import org.jetbrains.exposed.sql.SchemaUtils
+import org.jetbrains.exposed.sql.transactions.transaction
 import org.koin.dsl.module
 
 val FinJavKoinModule = module {
     single<Database> {
-        Database.connect(
+        val db = Database.connect(
             url = "jdbc:sqlite:finjav.db",
             driver = "org.sqlite.JDBC",
-        ).also { _ ->
+        )
+
+        transaction(db) {
             SchemaUtils.create(Users, Recurrences)
         }
+
+        db
     }
 
     // services

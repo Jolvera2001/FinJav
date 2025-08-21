@@ -25,14 +25,14 @@
                 <Label style="-fx-font-size: 15px" text="Login" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="1" />
 
                 <Label text="Username:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-                <TextField fx:id="LoginNameInput" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <TextField fx:id="loginNameInput" GridPane.columnIndex="1" GridPane.rowIndex="2" />
 
                 <Label text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-                <PasswordField fx:id="LoginPasswordInput" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <PasswordField fx:id="loginPasswordInput" GridPane.columnIndex="1" GridPane.rowIndex="3" />
 
                 <HBox spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
-                    <Button fx:id="LoginConfirmButton" prefWidth="95.0" text="Login" />
-                    <Button fx:id="LoginClearFieldsButton" prefWidth="95.0" text="Clear" />
+                    <Button fx:id="loginConfirmButton" prefWidth="95.0" text="Login" />
+                    <Button fx:id="loginClearFieldsButton" prefWidth="95.0" text="Clear" />
                 </HBox>
 
                 <Separator orientation="VERTICAL" GridPane.columnIndex="2" GridPane.rowSpan="8" />
@@ -41,17 +41,17 @@
                 <Label style="-fx-font-size: 15px" text="Register" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="1" />
 
                 <Label text="Username:" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-                <TextField fx:id="RegisterNameInput" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                <TextField fx:id="registerNameInput" GridPane.columnIndex="4" GridPane.rowIndex="2" />
 
                 <Label text="Email:" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-                <TextField fx:id="RegisterEmailInput" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                <TextField fx:id="registerEmailInput" GridPane.columnIndex="4" GridPane.rowIndex="3" />
 
                 <Label text="Password:" GridPane.columnIndex="3" GridPane.rowIndex="4" />
-                <PasswordField fx:id="RegisterPasswordInput" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                <PasswordField fx:id="registerPasswordInput" GridPane.columnIndex="4" GridPane.rowIndex="4" />
 
                 <HBox spacing="10.0" GridPane.columnIndex="4" GridPane.rowIndex="5">
-                    <Button fx:id="RegisterConfirmButton" prefWidth="95.0" text="Register" />
-                    <Button fx:id="RegisterClearFieldsButton" prefWidth="95.0" text="Clear" />
+                    <Button fx:id="registerConfirmButton" prefWidth="95.0" text="Register" />
+                    <Button fx:id="registerClearFieldsButton" prefWidth="95.0" text="Clear" />
                 </HBox>
             <rowConstraints>
                <RowConstraints />

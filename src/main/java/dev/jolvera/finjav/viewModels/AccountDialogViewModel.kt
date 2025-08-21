@@ -73,7 +73,7 @@ class AccountDialogViewModel(private val userService: IUserService) : BaseViewMo
                     PasswordUtils.hashPassword(registerPassword.get()),
                 )
                 userService.Register(newUser)
-                userService.FindById(newUser.id!!)
+                userService.FindById(newUser.id)
             },
             uiUpdate = { user ->
                 if (user == null) {

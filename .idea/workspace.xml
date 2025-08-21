@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ee34415-2bf3-4076-9fdc-abea22d4f830" name="Changes" comment="setup for tests and refining tables">
+    <list default="true" id="3ee34415-2bf3-4076-9fdc-abea22d4f830" name="Changes" comment="login and registration works now">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/models/User.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/models/User.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/services/UserService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/services/UserService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/tables/Users.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/tables/Users.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/dev/jolvera/finjav/serviceTests/UserServiceTests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/dev/jolvera/finjav/serviceTests/UserServiceTests.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/dev/jolvera/finjav/testModules/DbTestModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/dev/jolvera/finjav/testModules/DbTestModule.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/FinJavKoinModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/FinJavKoinModule.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/controllers/AccountDialogController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/controllers/AccountDialogController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/viewModels/AccountDialogViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/viewModels/AccountDialogViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dev/jolvera/finjav/account-dialog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dev/jolvera/finjav/account-dialog.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +82,7 @@
   &quot;isMigrated&quot;: true
 }</component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -136,7 +134,7 @@
     ]
   }
 }]]></component>
-  <component name="RunManager" selected="Kotest.UserServiceTests">
+  <component name="RunManager" selected="Application.Launcher">
     <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="dev.jolvera.finjav.Launcher" />
       <module name="FinJav.main" />
@@ -314,7 +312,7 @@
       <workItem from="1755537501270" duration="15095000" />
       <workItem from="1755571663529" duration="5120000" />
       <workItem from="1755656810178" duration="2323000" />
-      <workItem from="1755718523756" duration="5022000" />
+      <workItem from="1755718523756" duration="7747000" />
     </task>
     <task id="LOCAL-00001" summary="I'm so tired">
       <option name="closed" value="true" />
@@ -564,14 +562,21 @@
       <option name="project" value="LOCAL" />
       <updated>1755719479896</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="login and registration works now">
+      <option name="closed" value="true" />
+      <created>1755728316501</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1755728316501</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="lombok is weird" />
     <MESSAGE value="learning more about CompletableFutures" />
     <MESSAGE value="implemented viewmodel for dialog I think" />
     <MESSAGE value="all of this for a dialog..." />
@@ -596,7 +601,8 @@
     <MESSAGE value="gotta use exposed now and it AINT WORKING" />
     <MESSAGE value="I think I did the relationship right" />
     <MESSAGE value="setup for tests and refining tables" />
-    <option name="LAST_COMMIT_MESSAGE" value="setup for tests and refining tables" />
+    <MESSAGE value="login and registration works now" />
+    <option name="LAST_COMMIT_MESSAGE" value="login and registration works now" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -605,16 +611,6 @@
           <url>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jdbi/jdbi3-core/3.49.5/80012047b5843598280ea623af5419649ba9174c/jdbi3-core-3.49.5-sources.jar!/org/jdbi/v3/core/Handle.java</url>
           <line>250</line>
           <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/viewModels/AccountDialogViewModel.kt</url>
-          <line>75</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/viewModels/AccountDialogViewModel.kt</url>
-          <line>44</line>
-          <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
