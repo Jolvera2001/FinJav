@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ee34415-2bf3-4076-9fdc-abea22d4f830" name="Changes" comment="login and registration works now">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/FinJavKoinModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/FinJavKoinModule.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/controllers/AccountDialogController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/controllers/AccountDialogController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/viewModels/AccountDialogViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/viewModels/AccountDialogViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/dev/jolvera/finjav/account-dialog.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dev/jolvera/finjav/account-dialog.fxml" afterDir="false" />
+    <list default="true" id="3ee34415-2bf3-4076-9fdc-abea22d4f830" name="Changes" comment="things are working now yippee">
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/services/interfaces/IRecurrenceService.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,11 +49,11 @@
         <option value="Interface" />
         <option value="FxmlFile" />
         <option value="Kotlin Data Class" />
-        <option value="Kotlin Interface" />
         <option value="Class" />
         <option value="Kotlin Class" />
         <option value="Kotlin Object" />
         <option value="Kotlin File" />
+        <option value="Kotlin Interface" />
       </list>
     </option>
   </component>
@@ -312,7 +308,7 @@
       <workItem from="1755537501270" duration="15095000" />
       <workItem from="1755571663529" duration="5120000" />
       <workItem from="1755656810178" duration="2323000" />
-      <workItem from="1755718523756" duration="7747000" />
+      <workItem from="1755718523756" duration="8526000" />
     </task>
     <task id="LOCAL-00001" summary="I'm so tired">
       <option name="closed" value="true" />
@@ -570,14 +566,21 @@
       <option name="project" value="LOCAL" />
       <updated>1755728316501</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="things are working now yippee">
+      <option name="closed" value="true" />
+      <created>1755734744194</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1755734744194</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="learning more about CompletableFutures" />
     <MESSAGE value="implemented viewmodel for dialog I think" />
     <MESSAGE value="all of this for a dialog..." />
     <MESSAGE value="added TODOs" />
@@ -602,7 +605,8 @@
     <MESSAGE value="I think I did the relationship right" />
     <MESSAGE value="setup for tests and refining tables" />
     <MESSAGE value="login and registration works now" />
-    <option name="LAST_COMMIT_MESSAGE" value="login and registration works now" />
+    <MESSAGE value="things are working now yippee" />
+    <option name="LAST_COMMIT_MESSAGE" value="things are working now yippee" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
