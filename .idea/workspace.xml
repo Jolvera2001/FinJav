@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ee34415-2bf3-4076-9fdc-abea22d4f830" name="Changes" comment="things are working now yippee">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/services/interfaces/IRecurrenceService.kt" afterDir="false" />
+    <list default="true" id="3ee34415-2bf3-4076-9fdc-abea22d4f830" name="Changes" comment="starting on recurrence stuff">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/models/Recurrence.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/models/Recurrence.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/services/RecurrenceService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/services/RecurrenceService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/tables/Recurrences.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/jolvera/finjav/tables/Recurrences.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,10 +53,10 @@
         <option value="FxmlFile" />
         <option value="Kotlin Data Class" />
         <option value="Class" />
-        <option value="Kotlin Class" />
         <option value="Kotlin Object" />
         <option value="Kotlin File" />
         <option value="Kotlin Interface" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -308,7 +311,7 @@
       <workItem from="1755537501270" duration="15095000" />
       <workItem from="1755571663529" duration="5120000" />
       <workItem from="1755656810178" duration="2323000" />
-      <workItem from="1755718523756" duration="8526000" />
+      <workItem from="1755718523756" duration="10539000" />
     </task>
     <task id="LOCAL-00001" summary="I'm so tired">
       <option name="closed" value="true" />
@@ -574,14 +577,21 @@
       <option name="project" value="LOCAL" />
       <updated>1755734744194</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="starting on recurrence stuff">
+      <option name="closed" value="true" />
+      <created>1755744348583</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1755744348583</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="implemented viewmodel for dialog I think" />
     <MESSAGE value="all of this for a dialog..." />
     <MESSAGE value="added TODOs" />
     <MESSAGE value="made things sync" />
@@ -606,7 +616,8 @@
     <MESSAGE value="setup for tests and refining tables" />
     <MESSAGE value="login and registration works now" />
     <MESSAGE value="things are working now yippee" />
-    <option name="LAST_COMMIT_MESSAGE" value="things are working now yippee" />
+    <MESSAGE value="starting on recurrence stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="starting on recurrence stuff" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -1,5 +1,6 @@
 package dev.jolvera.finjav.tables
 
+import dev.jolvera.finjav.models.Recurrence
 import org.jetbrains.exposed.dao.UUIDEntity
 import org.jetbrains.exposed.dao.UUIDEntityClass
 import org.jetbrains.exposed.dao.id.EntityID
@@ -15,7 +16,7 @@ object Recurrences: UUIDTable("recurrences") {
     val name = varchar("name", 50).uniqueIndex()
     val amount = decimal("amount", 12, 2)
     val isIncome = bool("is_income")
-    val recurringDate = datetime("recurring_date")
+    val recurringDate = date("recurring_date")
 }
 
 class RecurrenceEntity(id: EntityID<UUID>) : UUIDEntity(id) {
@@ -31,4 +32,17 @@ class RecurrenceEntity(id: EntityID<UUID>) : UUIDEntity(id) {
     var recurringDate by Recurrences.recurringDate
 
     override fun toString() = "RecurrenceEntity(id=$id, dateCreated=$dateCreated, dateModified=$dateModified, name=$name,)"
+
+    fun toRecurrence() : Recurrence {
+        return Recurrence(
+            id = this.id.value,
+            userId = this.user.id.value,
+            dateCreated = this.dateCreated,
+            dateModified = this.dateModified,
+            name = this.name,
+            amount = this.amount,
+            isIncome = this.isIncome,
+            recurringDate = this.recurringDate
+        )
+    }
 }
